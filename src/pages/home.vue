@@ -3,19 +3,19 @@ import titlecomponent from '../components/title.vue';
 </script>
 
 <template>
-  <div class="mx-auto w-1/2">
+  <div class="mx-auto sm:w-3/4 lg:w-1/2 w-full">
     <titlecomponent title="Home" />
     <div class="">
       <div class="dark:bg-slate-800 bg-gray-200 rounded-lg shadow-lg p-5 md:p-10 mx-2 text-center">
         <div class="my-2">
-          <img  class=" h-44 rounded-lg mx-auto" src="../../public/images/wouthostens.jpg"
-            alt="Your Name">
+          <img class=" h-44 rounded-lg mx-auto" src="/images/wouthostens.jpg" alt="Your Name">
         </div>
         <titlecomponent title="Wout Hostens" />
         <h2 class="dark:text-slate-300 text-xl">Software developer</h2>
         <p class="dark:text-slate-400 text-gray-800 mt-4">
           Hey, mijn naam is Wout Hostens, geboren op 24 mei 2000. Ik ben een gepassioneerd en toegewijd persoon die
-          momenteel in Avelgem, België woont. Mijn skills liggen vooral in het backend gedeelte van software ontwikkeling.
+          momenteel in Avelgem, België woont. Mijn skills liggen vooral in het backend gedeelte van software
+          ontwikkeling.
           Bij het opmaken van websites/applicaties kan ik wel mijn weg vinden. Wat me het meeste aanspreekt aan de
           programmeer wereld is het probleem oplossend denken.
         </p>

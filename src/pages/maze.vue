@@ -8,12 +8,13 @@ import titlecomponent from '../components/title.vue';
         <div class="game-board items-center dark:text-yellow-500 text-indigo-500 ">
             <div v-for="(row, i) in gameBoard" :key="i" class="row border  border-indigo-400 dark:border-yellow-500">
                 <div v-for="(cell, j) in row" :key="j"
-                    :class="['cell', cell, cell === 'deathTrap' ? 'bg-indigo-400 dark:bg-yellow-500' : '', ' border dark:border-yellow-500 border-indigo-400']">
+                    :class="['cell', cell, cell === 'deathTrap' ? 'bg-indigo-400 dark:bg-yellow-500 snake:bg-green' : '', ' border dark:border-yellow-500 border-indigo-400 snake:bg-green']">
                 </div>
             </div>
             <p>Score: {{ score }}</p>
             <form class="pt-1 " @submit.prevent="startGame">
-                <input class="text-center  border-4 border-indigo-400 dark:border-yellow-400" v-model="playerName" placeholder="Enter your name" required />
+                <input autocomplete="on" id="Name" class="text-center  border-4 border-indigo-400 dark:border-yellow-400" v-model="playerName"
+                    placeholder="Enter your name" required />
                 <button class="dark:text-yellow-500 ml-2 p-2   border-4 border-indigo-400 dark:border-yellow-500"
                     type="submit">Start Game</button>
             </form>
@@ -126,6 +127,7 @@ export default {
 </script>
 
 <style scoped>
+
 .game-board {
     display: flex;
     flex-direction: column;

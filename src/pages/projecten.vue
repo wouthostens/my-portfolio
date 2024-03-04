@@ -15,8 +15,7 @@ import titlecomponent from '../components/title.vue';
         projectImage='/images/SimonSays1.png' projectUrl='https://github.com/wouthostens/SimonSays' />
       <project class="" projectTitle='Pronostiek App'
         projectDescription='Als opdracht voor het vak android app develpment mochten we een app naar keuze maken met enkele voorwaarden. Ik heb ervoor gekozen om een pronostiek app te maken voor het EK 2020. Deze is niet helemaal afgewerkt maar de grote lijne waren wel aanwezig. Het project was iets groter uitgevallen dan de opdracht bedoeld was. De app is gemaakt in Kotlin, maakte gerbuik van een api om de scores van gespeelde matchen op te halen en hield data bij in firebase.'
-        projectImage='/images/pronostiekApp.png'
-        projectUrl='https://github.com/wouthostens/Pronostiek-Final-verion' />
+        projectImage='/images/pronostiekApp.png' projectUrl='https://github.com/wouthostens/Pronostiek-Final-verion' />
       <project class="" projectTitle='Python scripts'
         projectDescription='Dit is een verzameling van python scripts die ik gemaakt heb. Deze zijn vooral gemaakt voor schoolopdrachten of om iets te automatiseren. Bij sommige zal je zien dat er tokens open en bloot te bezichtigen zijn. Deze zijn ondertussen vervangen door een .env file of worden niet meer gebruikt.'
         projectImage='/images/pythonscripts.jpg' projectUrl='https://github.com/wouthostens/pythonscripts' />
@@ -37,6 +36,7 @@ export default {
 
 <style scoped>
 .box {
-  height: 580px;
+  height: 85vh;
+  widows: 50vh;
 }
 </style>

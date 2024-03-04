@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-<div class="dark:bg-slate-800 w-1/2 mb-5   mx-auto bg-gray-200   rounded-xl shadow-md   pt-2 text-left content-left">
+<div class="dark:bg-slate-800 sm:w-3/4 lg:w-1/2 w-full mb-5   mx-auto bg-gray-200   rounded-xl shadow-md   pt-2 text-left content-left">
       <div class="md:flex">
         <div class="md:shrink-0">
           <img class=" m-5 object-cover w-32 h-43  rounded-lg" :src="projectImage" alt="Simon Says">

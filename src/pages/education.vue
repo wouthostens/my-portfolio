@@ -3,38 +3,42 @@ import titlecomponent from '../components/title.vue';
 </script>
 
 <template>
-  <div class="box overflow-auto">
+  <div>
     <titlecomponent title="Opleidingen en stages" />
-    <div class="pb-5" v-for="(education, index) in timeline" :key="index">
-      <div class="dark:bg-slate-800 p-6 w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden flex">
-        <div>
-          <h3 class="dark:text-slate-300 text-lg font-semibold">Opleidingen:</h3>
-          <div class="flex items-center">
-            <div class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{
-              education.degree }}</div>
-            <p class="dark:text-slate-300 ml-5 ">{{ education.year }}</p>
-          </div>
-          <p class="dark:text-slate-300">{{ education.school }}</p>
-          <p class="dark:text-slate-400"> {{ education.discription }}</p>
-          <a :href="education.link"
-            class="dark:text-slate-300 dark:hover:text-yellow-500 block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline">Bekijk
-            hier info over de opleiding</a>
-          <div class="ml-10" v-if="education.internships">
-            <h3 class="dark:text-slate-300 text-lg font-semibold">Stages:</h3>
-            <div v-for="(internship, index) in education.internships" :key="index">
-              <div class="flex">
-                <p class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">Stage bij {{ internship.company }}</p>
-                <p class="dark:text-slate-300 ml-5">{{ internship.period }}</p>
+    <div class="box overflow-auto">
+      <div class="pb-5" v-for="(education, index) in timeline" :key="index">
+        <div
+          class="dark:bg-slate-800 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden flex">
+          <div>
+            <h3 class="dark:text-slate-300 text-lg font-semibold">Opleidingen:</h3>
+            <div class="flex items-center">
+              <div class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{
+        education.degree }}</div>
+              <p class="dark:text-slate-300 ml-5 ">{{ education.year }}</p>
+            </div>
+            <p class="dark:text-slate-300">{{ education.school }}</p>
+            <p class="dark:text-slate-400"> {{ education.discription }}</p>
+            <a :href="education.link"
+              class="dark:text-slate-300 dark:hover:text-yellow-500 block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline">Bekijk
+              hier info over de opleiding</a>
+            <div class="ml-10" v-if="education.internships">
+              <h3 class="dark:text-slate-300 text-lg font-semibold">Stages:</h3>
+              <div v-for="(internship, index) in education.internships" :key="index">
+                <div class="flex">
+                  <p class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">Stage
+                    bij {{ internship.company }}</p>
+                  <p class="dark:text-slate-300 ml-5">{{ internship.period }}</p>
+                </div>
+                <p class="dark:text-slate-400 my-2"> {{ internship.discription }}</p>
+                <p class="dark:text-slate-500">Skills: {{ internship.skills }}</p>
+                <a :href="internship.link"
+                  class="dark:text-slate-300 dark:hover:text-yellow-500 block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline">Bekijk
+                  {{ internship.company }}</a>
               </div>
-              <p class="dark:text-slate-400 my-2"> {{ internship.discription }}</p>
-              <p class="dark:text-slate-500">Skills: {{ internship.skills }}</p>
-              <a :href="internship.link"
-                class="dark:text-slate-300 dark:hover:text-yellow-500 block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline">Bekijk
-                {{ internship.company }}</a>
             </div>
           </div>
+          <img :src="education.images" alt="Education Image" class="ml-auto  w-16 h-16 object-cover rounded-full">
         </div>
-        <img :src="education.images" alt="Education Image" class="ml-auto  w-16 h-16 object-cover rounded-full">
       </div>
     </div>
   </div>
@@ -110,6 +114,8 @@ export default {
 }
 </script>
 
-<style scoped>.box {
-  height: 620px;
-}</style>
+<style scoped>
+.box {
+  height: 85vh;
+}
+</style>

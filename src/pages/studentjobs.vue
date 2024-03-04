@@ -3,10 +3,11 @@ import titlecomponent from '../components/title.vue';
 </script>
 
 <template>
+  <div>
+    <titlecomponent title="Studenten jobs" />
     <div class="box overflow-auto">
-      <titlecomponent title="Studenten jobs" />
       <div class="pb-5" v-for="(job, index) in jobs" :key="index">
-        <div class="dark:bg-slate-800 p-6 w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden relative">
+        <div class="dark:bg-slate-800 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden flex">
           <div>
             <h3 class="dark:text-yellow-500 text-lg font-semibold">{{ job.title }}</h3>
             <div class="dark:text-slate-300 uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ job.period }}</div>
@@ -14,10 +15,11 @@ import titlecomponent from '../components/title.vue';
             <p class="dark:text-slate-500 mt-3" v-if="job.skills">Skills: {{ job.skills }}</p>
             <a :href="job.link" class="dark:text-slate-300 dark:hover:text-yellow-500 block mb-4 text-lg leading-tight font-medium text-black hover:underline ">Bekijk {{ job.company }}</a>
           </div>
-          <img v-if="job.images" :src="job.images" alt="studenten job Image" class="absolute top-2 right-5 w-16 h-16 object-cover rounded-full">
+          <img v-if="job.images" :src="job.images" alt="studenten job Image" class="ml-auto  w-16 h-16 object-cover rounded-full">
         </div>
       </div>
     </div>
+  </div>
   </template>
 
 <script>
@@ -68,6 +70,6 @@ export default {
 
 <style scoped>
 .box {
-    height: 630px;
+    height: 85vh;
 }
 </style>

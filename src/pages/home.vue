@@ -16,17 +16,17 @@ import titlecomponent from '../components/title.vue';
           Hey, mijn naam is Wout Hostens, geboren op 24 mei 2000. Ik ben een gepassioneerd en toegewijd persoon die
           momenteel in Avelgem, België woont. Mijn skills liggen vooral in het backend gedeelte van software
           ontwikkeling.
-          Bij het opmaken van websites/applicaties kan ik wel mijn weg vinden. Wat me het meeste aanspreekt aan de
+          Bij het opmaken van websites/applicaties kan ik zeker mijn weg vinden. Wat me het meeste aanspreekt aan de
           programmeer wereld is het probleem oplossend denken.
         </p>
         <p class="dark:text-slate-400 text-gray-700 mt-4">
           Je kunt mij bereiken via mijn gsm op <a href="tel:+32468166869"
             class="dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 ">+32 468 16 68 69</a> <br> of
           contacteer me via
-          <a href="mailto:Wout.Hostens@gmail.com"
-            class="dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 ">Wout.Hostens@gmail.com</a>.
+          <a href="mailto:wout.hostens@gmail.com"
+            class="dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 ">wout.hostens@gmail.com</a>.
           <br> Je kan me ook bereiken via LinkedIn door<a href="https://www.linkedin.com/in/Wout-Hostens/"
-            class=" dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 "> hier te klikken.</a>
+            class=" dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 "> hier</a> te klikken.
         </p>
       </div>
     </div>

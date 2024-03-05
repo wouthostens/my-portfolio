@@ -28,7 +28,7 @@ import titlecomponent from '../components/title.vue';
     </div>
 </template>
 
-<script>
+<script scoped>
 export default {
     data() {
         return {

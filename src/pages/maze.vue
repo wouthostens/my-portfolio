@@ -1,11 +1,17 @@
 <script setup>
 import titlecomponent from '../components/title.vue';
+import db, { scoreRef } from '../../firebaseconfig';
+import { query, orderBy, limit,getDoc, getDocs, doc, setDoc } from "firebase/firestore";  
 </script>
 
 <template>
     <div>
         <titlecomponent title="Snake game" />
-        <div class="game-board items-center dark:text-yellow-500 text-indigo-500 ">
+        <div class="box overflow-auto game-board items-center dark:text-yellow-500 text-indigo-500 ">
+            <p class="text-lg w-full sm:w-3/4 lg:w-1/2">Gebruik de pijltoetsen om de slang te besturen. Het doel is om
+                het rode voedsel te eten en de muren of de gele muren te vermijden. Elke keer dat je het voedsel eet,
+                neemt je score toe. Wees voorzichtig, want het spel wordt uitdagender met extra muren die elke 5 punten
+                verschijnen. Veel succes!!</p>
             <div v-for="(row, i) in gameBoard" :key="i" class="row border  border-indigo-400 dark:border-yellow-500">
                 <div v-for="(cell, j) in row" :key="j"
                     :class="['cell', cell, cell === 'deathTrap' ? 'bg-indigo-400 dark:bg-yellow-500 snake:bg-green' : '', ' border dark:border-yellow-500 border-indigo-400 snake:bg-green']">
@@ -13,7 +19,8 @@ import titlecomponent from '../components/title.vue';
             </div>
             <p>Score: {{ score }}</p>
             <form class="pt-1 " @submit.prevent="startGame">
-                <input autocomplete="on" id="Name" class="text-center  border-4 border-indigo-400 dark:border-yellow-400" v-model="playerName"
+                <input autocomplete="on" id="Name"
+                    class="text-center  border-4 border-indigo-400 dark:border-yellow-400" v-model="playerName"
                     placeholder="Enter your name" required />
                 <button class="dark:text-yellow-500 ml-2 p-2   border-4 border-indigo-400 dark:border-yellow-500"
                     type="submit">Start Game</button>
@@ -32,17 +39,23 @@ import titlecomponent from '../components/title.vue';
 export default {
     data() {
         return {
-            gameBoard: Array(20).fill(Array(20).fill('')),
             snake: [{ x: 10, y: 10 }],
+            rawGameBoard: Array(20).fill(Array(20).fill('')),
             direction: 'right',
             food: null,
             gameInterval: null,
             score: 0,
             highScores: [],
             deathTraps: [],
+
         };
     },
     methods: {
+        preventScroll(e) {
+            if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                e.preventDefault();
+            }
+        },
         startGame() {
             this.direction = 'right';
             this.snake = [{ x: 10, y: 10 }];
@@ -53,7 +66,7 @@ export default {
         },
         endGame() {
             clearInterval(this.gameInterval);
-            this.highScores.push({ name: this.playerName, score: this.score });
+            this.saveHighScore();
             this.highScores.sort((a, b) => b.score - a.score);
             if (this.highScores.length > 3) this.highScores.length = 3; // Keep only top 3 scores
         },
@@ -104,10 +117,27 @@ export default {
             }
             return cell;
         },
+        async saveHighScore() {
+            const docRef = doc(db, 'score', this.playerName);
+            const docSnap = await getDoc(docRef);
+            if (!docSnap.exists() || this.score > docSnap.data().score) {
+                await setDoc(docRef, {
+                    name: this.playerName,
+                    score: this.score,
+                });
+            }
+            this.updatescoreboard();
+        },
+        async updatescoreboard() {
+            const q = query(scoreRef, orderBy("score", "desc"), limit(3));
+            const highScoresFire = await getDocs(q);
+            this.highScores = highScoresFire.docs.map(doc => doc.data());
+        },
     },
+
     computed: {
         gameBoard() {
-            return this.gameBoard.map((row, y) => row.map((cell, x) => {
+            return this.rawGameBoard.map((row, y) => row.map((cell, x) => {
                 if (this.isSnake({ x, y })) return 'snake';
                 if (this.isFood({ x, y })) return 'food';
                 if (this.isDeathTrap({ x, y })) return 'deathTrap';
@@ -116,18 +146,22 @@ export default {
         },
     },
     mounted() {
+        window.addEventListener('keydown', this.preventScroll);
         window.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowUp' && this.direction !== 'down') this.direction = 'up';
             if (e.key === 'ArrowDown' && this.direction !== 'up') this.direction = 'down';
             if (e.key === 'ArrowLeft' && this.direction !== 'right') this.direction = 'left';
             if (e.key === 'ArrowRight' && this.direction !== 'left') this.direction = 'right';
         });
+        this.updatescoreboard();
+    },
+    beforeDestroy() {
+        window.removeEventListener('keydown', this.preventScroll);
     },
 };
 </script>
 
 <style scoped>
-
 .game-board {
     display: flex;
     flex-direction: column;
@@ -138,6 +172,10 @@ export default {
     display: flex;
 }
 
+.box {
+    height: 85vh;
+}
+
 .row div {
     width: 20px;
     height: 20px;
@@ -146,7 +184,6 @@ export default {
 .snake {
     background: green;
 }
-
 
 .food {
     background: red;

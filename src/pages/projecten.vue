@@ -8,7 +8,7 @@ import titlecomponent from '../components/title.vue';
     <titlecomponent title="Projecten" />
     <div class=" box overflow-auto ">
       <project class="" projectTitle="Portfolio website"
-        projectDescription="Deze website is gemaakt in Vue 3 met Vite, er wordt ook gebruik gemaakt van tailwind css voor de opmaak. De bedoeling is om mezelf voor te stellen en enkele projecten te tonen. De website is ook donker modus vriendelijk en er is een simpel snake game toegevoegd. De code is te vinden op github."
+        projectDescription="Deze website is gemaakt in Vue 3 met Vite, er wordt ook gebruik gemaakt van tailwind css voor de opmaak. De bedoeling is om mezelf voor te stellen en enkele projecten te tonen. De website is ook donker modus vriendelijk en er is een simpel snake game toegevoegd. De site wordt telkens automatisch gedeployd naar firebase waar het gehost wordt en het juiste domein toegekend wordt. De code is te vinden op github."
         projectImage='/images/websiteLight.png' projectUrl="https://github.com/wouthostens/my-portfolio" />
       <project class="" projectTitle='Home Assistant simon says'
         projectDescription='Als project op school kregen we enkele phillips hue producten zoals lampen, stopcontacten, schakelaar en een bridge. Samen met Daan Vervacke hebben we ervoor gekozen om een simon says spel te maken met de lampen en de schakelaar. Dit hebben we dan in Home Assistant toegevoegd. Het pyscript bestand is te vinden op github.'

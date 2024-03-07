@@ -41,7 +41,7 @@ export default {
                     company: 'Vedelux',
                     period: 'okt 2022 - aug 2023',
                     images: '/images/vedelux.png',
-                    description: 'Bestaande scanning app uitbreiden en omvormen zodat er geen gebruik gemaakt wordt van excel data maar van firebase. Meer uitleg kan je vinden bij projecten.',
+                    description: 'Bestaande scanning app uitbreiden en omvormen zodat er geen gebruik gemaakt wordt van excel data maar van firebase. Meer uitleg kan je vinden bij projecten. Ook heb ik allerlei andere dingen aan de hand met Python geautomatiseerd zodat er minder manueel werk nodig was bij de werknemers. ',
                     skills: 'Python, Kotlin en HTML CSS JS',
                     link: 'https://www.vedelux.be/'
                 },
@@ -49,7 +49,7 @@ export default {
                     title: 'Jobstudent bij Exante IT',
                     company: 'Exante IT',
                     period: 'jul 2022 - aug 2022',
-                    description: 'Verder ontwikkelen van een app in kotlin. Voor de data opslag werd gebruik gemaakt van een firebase database.',
+                    description: 'Verder ontwikkelen van een app in kotlin. Voor de data opslag werd gebruik gemaakt van een firebase database. Waren vooral basis dingen en kleine aanpassingen.',
                     skills: 'Kotlin',
                     link: 'https://www.exante-it.be/'
                 },

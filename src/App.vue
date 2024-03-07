@@ -29,7 +29,7 @@ const routes = {
   '/education': education,
   '/projecten': projecten,
   '/studentjobs': studentjobs,
-  '/maze': maze
+  '/snake': maze
 }
 
 const currentPath = ref(window.location.hash)
@@ -91,8 +91,8 @@ export default {
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Studenten
             Jobs</a>
           <span class="hidden lg:inline">|</span>
-          <a @click="open = false" href="#/maze"
-            class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Maze
+          <a @click="open = false" href="#/snake"
+            class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Snake
             game</a>
           <span class="hidden lg:inline">|</span>
           <span @click="toggleDarkMode"

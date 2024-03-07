@@ -9,7 +9,7 @@ import { query, orderBy, limit,getDoc, getDocs, doc, setDoc } from "firebase/fir
         <titlecomponent title="Snake game" />
         <div class="box overflow-auto game-board items-center dark:text-yellow-500 text-indigo-500 ">
             <p class="text-lg w-full sm:w-3/4 lg:w-1/2">Gebruik de pijltoetsen om de slang te besturen. Het doel is om
-                het rode voedsel te eten en de muren of de gele muren te vermijden. Elke keer dat je het voedsel eet,
+                het rode voedsel te eten en de muren te vermijden. Elke keer dat je het voedsel eet,
                 neemt je score toe. Wees voorzichtig, want het spel wordt uitdagender met extra muren die elke 5 punten
                 verschijnen. Veel succes!!</p>
             <div v-for="(row, i) in gameBoard" :key="i" class="row border  border-indigo-400 dark:border-yellow-500">

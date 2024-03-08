@@ -1,7 +1,8 @@
 <script setup>
 import titlecomponent from '../components/title.vue';
 import db, { scoreRef } from '../../firebaseconfig';
-import { query, orderBy, limit,getDoc, getDocs, doc, setDoc } from "firebase/firestore";  
+import { query, orderBy, limit,getDoc, getDocs, doc, setDoc, Timestamp } from "firebase/firestore";  
+import 'firebase/firestore';
 </script>
 
 <template>
@@ -124,6 +125,7 @@ export default {
                 await setDoc(docRef, {
                     name: this.playerName,
                     score: this.score,
+                    date: Timestamp.now() ,
                 });
             }
             this.updatescoreboard();

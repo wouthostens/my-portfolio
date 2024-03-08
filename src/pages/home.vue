@@ -13,10 +13,9 @@ import titlecomponent from '../components/title.vue';
         <titlecomponent title="Wout Hostens" />
         <h2 class="dark:text-slate-300 text-xl">Software developer</h2>
         <p class="dark:text-slate-400 text-gray-800 mt-4">
-          Hey, mijn naam is Wout Hostens, geboren op 24 mei 2000. Ik ben een gepassioneerd en toegewijd persoon die
-          momenteel in Avelgem, België woont. Mijn skills liggen vooral in het backend gedeelte van software
+          Hey, mijn naam is Wout Hostens, geboren op 24 mei 2000 en momenteel woonachtig in Avelgem, België. In het dagelijkse leven probeer ik wat loop kilometers te verzamelen afhankelijk van het weer natuurlijk.  Mijn sterke punten liggen vooral in het backend gedeelte van software
           ontwikkeling.
-          Bij het opmaken van websites/applicaties kan ik zeker mijn weg vinden. Wat me het meeste aanspreekt aan de
+          Ik voel me thuis bij het ontwerpen van websites en applicaties. Wat me het meeste aanspreekt aan de
           programmeer wereld is het probleem oplossend denken.
         </p>
         <p class="dark:text-slate-400 text-gray-700 mt-4">

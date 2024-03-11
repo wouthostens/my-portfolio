@@ -26,7 +26,7 @@ import 'firebase/firestore';
                 <button class="dark:text-yellow-500 ml-2 p-2   border-4 border-indigo-400 dark:border-yellow-500"
                     type="submit">Start Game</button>
             </form>
-            <h3 class="text-2xl">Top 3 High Scores</h3>
+            <h3 class="text-2xl">Top 5 High Scores</h3>
             <ul>
                 <li v-for="(score, index) in highScores" :key="index">
                     {{ score.name }}: {{ score.score }}
@@ -131,7 +131,7 @@ export default {
             this.updatescoreboard();
         },
         async updatescoreboard() {
-            const q = query(scoreRef, orderBy("score", "desc"), limit(3));
+            const q = query(scoreRef, orderBy("score", "desc"), limit(5));
             const highScoresFire = await getDocs(q);
             this.highScores = highScoresFire.docs.map(doc => doc.data());
         },

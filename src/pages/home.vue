@@ -3,10 +3,10 @@ import titlecomponent from '../components/title.vue';
 </script>
 
 <template>
-  <div class=" box mx-auto sm:w-3/4 lg:w-1/2 w-full">
+  <div class=" ">
     <titlecomponent title="Home" />
-    <div class="">
-      <div class="dark:bg-slate-800 bg-gray-200 rounded-lg shadow-lg p-5 md:p-10 mx-2 text-center">
+    <div class="box mx-auto sm:w-3/4 lg:w-1/2 w-full">
+      <div class="dark:bg-slate-800 bg-gray-200  rounded-lg shadow-lg p-5 md:p-10 mx-2 text-center">
         <div class="my-2">
           <img class=" h-44 rounded-lg mx-auto" src="/images/wouthostens.jpg" alt="Your Name">
         </div>

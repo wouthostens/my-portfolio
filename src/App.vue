@@ -6,6 +6,7 @@ import notFound from './pages/notFound.vue'
 import home from './pages/home.vue'
 import studentjobs from './pages/studentjobs.vue'
 import maze from './pages/maze.vue'
+import strava from './pages/strava.vue'
 
 
 const darkMode = ref(true);
@@ -29,7 +30,8 @@ const routes = {
   '/education': education,
   '/projecten': projecten,
   '/studentjobs': studentjobs,
-  '/snake': maze
+  '/snake': maze,
+  '/strava': strava
 }
 
 const currentPath = ref(window.location.hash)
@@ -94,6 +96,9 @@ export default {
           <a @click="open = false" href="#/snake"
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Snake
             game</a>
+          <span class="hidden lg:inline">|</span>
+          <a @click="open = false" href="#/strava"
+            class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Mijn strava</a>
           <span class="hidden lg:inline">|</span>
           <span @click="toggleDarkMode"
             class="dark:text-slate-400 dark:hover:text-yellow-500 hover:text-indigo-500 text-gray-700 font-medium mx-2">

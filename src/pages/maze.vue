@@ -8,7 +8,7 @@ import 'firebase/firestore';
 <template>
     <div>
         <titlecomponent title="Snake game" />
-        <div class="box overflow-auto game-board items-center dark:text-yellow-500 text-indigo-500 ">
+        <div class="box overflow-auto game-board items-center dark:text-slate-400 ">
             <p class="text-lg w-full sm:w-3/4 lg:w-1/2">Gebruik de pijltoetsen om de slang te besturen. Het doel is om
                 het rode voedsel te eten en de muren te vermijden. Elke keer dat je het voedsel eet,
                 neemt je score toe. Wees voorzichtig, want het spel wordt uitdagender met extra muren die elke 5 punten

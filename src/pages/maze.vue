@@ -29,7 +29,7 @@ import 'firebase/firestore';
             <h3 class="text-2xl">Top 5 High Scores</h3>
             <ul>
                 <li v-for="(score, index) in highScores" :key="index">
-                    {{ score.name }}: {{ score.score }}
+                    {{ index +1 }}. {{ score.name }}: {{ score.score }}
                 </li>
             </ul>
         </div>

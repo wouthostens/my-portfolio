@@ -4,16 +4,18 @@ defineProps({
   projectDescription: String,
   projectImage: String,
   projectTitle: String,
-  projectUrl: String
+  projectUrl: String,
+  projectImageWebp: String
 
 })
 </script>
 
 <template>
 <div class="dark:bg-slate-800 sm:w-3/4 lg:w-1/2 w-full mb-5 p-6  mx-auto bg-gray-200   rounded-xl shadow-md   pt-2 text-left content-left">
+      <link rel="preload" :href="projectImageWebp" as="image">
       <div class="md:flex">
         <div class="md:shrink-0">
-          <img class=" m-5 object-cover w-32 h-43  rounded-lg" :src="projectImage" alt="Simon Says">
+          <img class=" m-5 object-cover w-32 h-43  rounded-lg" :src="projectImageWebp" alt="Simon Says">
         </div>
         <div class="pb-8 mt-5">
           <div class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ projectTitle }}</div>

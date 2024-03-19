@@ -7,6 +7,7 @@ import home from './pages/home.vue'
 import studentjobs from './pages/studentjobs.vue'
 import maze from './pages/maze.vue'
 import strava from './pages/strava.vue'
+import woordle  from './pages/woordle.vue'
 
 
 const darkMode = ref(true);
@@ -31,7 +32,8 @@ const routes = {
   '/projecten': projecten,
   '/studentjobs': studentjobs,
   '/snake': maze,
-  '/strava': strava
+  '/strava': strava,
+  '/woordle': woordle
 }
 
 const currentPath = ref(window.location.hash)

@@ -1,37 +1,48 @@
 <script setup>
 import titlecomponent from '../components/title.vue';
 import db, { scoreRef } from '../../firebaseconfig';
-import { query, orderBy, limit,getDoc, getDocs, doc, setDoc, Timestamp } from "firebase/firestore";  
+import { query, orderBy, limit, getDoc, getDocs, doc, setDoc, Timestamp } from "firebase/firestore";
 import 'firebase/firestore';
 </script>
 
 <template>
     <div>
         <titlecomponent title="Snake game" />
-        <div class="box overflow-auto game-board items-center dark:text-slate-400 ">
-            <p class="text-lg w-full sm:w-3/4 lg:w-1/2">Gebruik de pijltoetsen om de slang te besturen. Het doel is om
-                het rode voedsel te eten en de muren te vermijden. Elke keer dat je het voedsel eet,
-                neemt je score toe. Wees voorzichtig, want het spel wordt uitdagender met extra muren die elke 5 punten
-                verschijnen. Veel succes!!</p>
-            <div v-for="(row, i) in gameBoard" :key="i" class="row border  border-indigo-400 dark:border-yellow-500">
-                <div v-for="(cell, j) in row" :key="j"
-                    :class="['cell', cell, cell === 'deathTrap' ? 'bg-indigo-400 dark:bg-yellow-500 snake:bg-green' : '', ' border dark:border-yellow-500 border-indigo-400 snake:bg-green']">
+        <div class="box overflow-auto ">
+            <div
+                class=" game-board items-center w-full sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg  dark:text-slate-400 dark:bg-slate-800 bg-gray-200">
+                <div
+                    class="dark:bg-slate-900 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-white rounded-xl shadow-md overflow-hidden flex my-3">
+                    <p class="">Gebruik de pijltoetsen om de slang te besturen. Het doel is om
+                        het rode voedsel te eten en de muren te vermijden. Elke keer dat je het voedsel eet,
+                        neemt je score toe. Wees voorzichtig, want het spel wordt uitdagender met extra muren die elke 5
+                        punten
+                        verschijnen. Veel succes!!</p>
+                </div>
+                <div v-for="(row, i) in gameBoard" :key="i"
+                    class="row border  border-indigo-400 dark:border-yellow-500">
+                    <div v-for="(cell, j) in row" :key="j"
+                        :class="['cell', cell, cell === 'deathTrap' ? 'bg-indigo-400 dark:bg-yellow-500 snake:bg-green' : '', ' border dark:border-yellow-500 border-indigo-400 snake:bg-green']">
+                    </div>
+                </div>
+                <p>Score: {{ score }}</p>
+                <form class="pt-1 " @submit.prevent="startGame">
+                    <input autocomplete="on" id="Name"
+                        class="text-center  border-4 border-indigo-400 dark:border-yellow-400" v-model="playerName"
+                        placeholder="Enter your name" required />
+                    <button class="dark:text-yellow-500 ml-2 p-2   border-4 border-indigo-400 dark:border-yellow-500"
+                        type="submit">Start Game</button>
+                </form>
+                <div
+                    class="dark:bg-slate-900 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-white rounded-xl shadow-md overflow-hidden flex flex-col my-3">
+                    <h3 class="text-2xl">Top 5 High Scores </h3>
+                    <ul>
+                        <li v-for="(score, index) in highScores" :key="index">
+                            {{ index + 1 }}. {{ score.name }}: {{ score.score }}
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <p>Score: {{ score }}</p>
-            <form class="pt-1 " @submit.prevent="startGame">
-                <input autocomplete="on" id="Name"
-                    class="text-center  border-4 border-indigo-400 dark:border-yellow-400" v-model="playerName"
-                    placeholder="Enter your name" required />
-                <button class="dark:text-yellow-500 ml-2 p-2   border-4 border-indigo-400 dark:border-yellow-500"
-                    type="submit">Start Game</button>
-            </form>
-            <h3 class="text-2xl">Top 5 High Scores</h3>
-            <ul>
-                <li v-for="(score, index) in highScores" :key="index">
-                    {{ index +1 }}. {{ score.name }}: {{ score.score }}
-                </li>
-            </ul>
         </div>
     </div>
 </template>
@@ -125,7 +136,7 @@ export default {
                 await setDoc(docRef, {
                     name: this.playerName,
                     score: this.score,
-                    date: Timestamp.now() ,
+                    date: Timestamp.now(),
                 });
             }
             this.updatescoreboard();

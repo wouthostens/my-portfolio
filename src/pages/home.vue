@@ -6,9 +6,10 @@ import titlecomponent from '../components/title.vue';
   <div class=" ">
     <titlecomponent title="Home" />
     <div class="box mx-auto sm:w-3/4 lg:w-1/2 w-full">
+      <link rel="preload" href="/images/wouthostens.webp" as="image">
       <div class="dark:bg-slate-800 bg-gray-200  rounded-lg shadow-lg p-5 md:p-10 mx-2 text-center">
         <div class="my-2">
-          <img class=" h-44 rounded-lg mx-auto " src="/images/wouthostens.jpg" alt="Your Name">
+          <img class=" h-44 rounded-lg mx-auto " src="/images/wouthostens.webp" alt="Your Name">
         </div>
         <titlecomponent title="Wout Hostens" />
         <h2 class="dark:text-slate-300 text-xl">Software developer</h2>

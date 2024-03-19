@@ -7,6 +7,7 @@ import titlecomponent from '../components/title.vue';
     <titlecomponent title="Opleidingen en stages" />
     <div class="box overflow-auto">
       <div class="pb-5" v-for="(education, index) in timeline" :key="index">
+        <link rel="preload" :href="education.imageswebp" as="image">
         <div
           class="dark:bg-slate-800 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden flex">
           <div>
@@ -37,7 +38,7 @@ import titlecomponent from '../components/title.vue';
               </div>
             </div>
           </div>
-          <img :src="education.images" alt="Education Image" class="ml-auto  w-16 h-16 object-cover rounded-full">
+          <img :src="education.imageswebp" alt="Education Image" class="ml-auto  w-16 h-16 object-cover rounded-full">
         </div>
       </div>
     </div>
@@ -57,6 +58,7 @@ export default {
           status: '',
           link: 'https://www.vives.be/nl/opleidingen/technologiecampus-kortrijk/graduaat/internet-of-things',
           images: '/images/vives.png',
+          imageswebp: '/images/vives.webp',
           internships: [
             {
               company: 'Catael',
@@ -75,6 +77,7 @@ export default {
           status: '',
           link: 'https://www.vives.be/nl/opleidingen/technologiecampus-kortrijk/graduaat/programmeren',
           images: '/images/vives.png',
+          imageswebp: '/images/vives.webp',
           internships: [
             {
               company: 'TVH',
@@ -105,6 +108,7 @@ export default {
           school: 'Heilig Hartcollege Waregem',
           discription: 'Tijdens deze opleiding heb ik veel bijgeleerd over het beheren van een netwerk en allerlei zaken binnen het programmeren. Dit was een ruime eerste kennismaken met het informatica verhaal waar verschillende aspecten aanbod kwamen. ',
           images: '/images/hhc.png',
+          imageswebp: '/images/hhc.webp',
           link: 'https://www.collegewaregem.be/studieaanbod/3-de-graad/informatica-beheer',
 
         }

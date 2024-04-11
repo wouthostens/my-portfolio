@@ -63,7 +63,7 @@ export default {
             {
               company: 'Catael',
               period: 'sept 2023 - jun 2024',
-              discription: 'Tijdens mijn stage heb ik kunnen proeven van heel wat zaken waarvan de belangrijkste het programmeren van een plcNext was. Ook heb ik een robot kunnen programmeren met Roboguide. Verder heb ik een demokoffer kunnen ontwikkelen die het gebruik van Symeo sensoren demonstreert.',
+              discription: 'Tijdens mijn stage heb ik kunnen proeven van heel wat zaken waarvan de belangrijkste het programmeren van een plcNext was. Ook heb ik een robot kunnen programmeren met Roboguide. Verder heb ik een demokoffer kunnen ontwikkelen die het gebruik van Symeo sensoren demonstreert. Tussendoor kon ik ook meehelpen met het maken van elektrische kasten beginnende vanaf 0 tot componenten plaatsen en bekabelen aan de hand van een schema.',
               skills: 'PlcNext, Roboguide',
               link: 'https://www.catael.be/'
             }

@@ -31,7 +31,7 @@ export default {
                 {
                     title: 'Jobstudent bij Codefever',
                     company: 'Codefever',
-                    period: 'sept 2016 - heden',
+                    period: 'jan 2016 - heden',
                     images: '/images/codefever.jpg',
                     imagesWebp: '/images/codefever.webp',
                     description: 'Hierbij geef ik les aan kinderen van het tweede leerjaar tot ze het hele traject hebben doorlopen +- 16j. Ik leer hen samen met assistenten of als assistent de basis concepten van programmeren aan. Dit gebeurd in een eerste fase aan de hand van scratch en minecraft education. In een latere fase leren ze html, css, javascript, python en maken ze gebruik van een microbit.',
@@ -41,7 +41,7 @@ export default {
                 {
                     title: 'Jobstudent bij Vedelux',
                     company: 'Vedelux',
-                    period: 'okt 2022 - aug 2023',
+                    period: 'okt 2022 - aug 2023 & jan 2024 - heden',
                     images: '/images/vedelux.png',
                     imagesWebp: '/images/vedelux.webp',
                     description: 'Bestaande scanning app uitbreiden en omvormen zodat er geen gebruik gemaakt wordt van excel data maar van firebase. Meer uitleg kan je vinden bij projecten. Ook heb ik allerlei andere dingen aan de hand met Python geautomatiseerd zodat er minder manueel werk nodig was bij de werknemers. ',

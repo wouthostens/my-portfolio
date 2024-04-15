@@ -4,14 +4,14 @@ import titlecomponent from '../components/title.vue';
 
 <template>
   <div>
-    <titlecomponent title="Contact me" />
+    <titlecomponent title="Contacteer mij" />
     <div class="flex justify-center   overflow-auto box">
       <div class="w-full max-w-md">
         <form @submit="submitForm"
           class="p-6 mx-auto dark:bg-slate-800 bg-gray-200 rounded-xl shadow-md overflow-hidden">
           <div class="mb-4 dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">
             <label class=" " for="name">
-              Name:
+              Naam:
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
@@ -27,7 +27,7 @@ import titlecomponent from '../components/title.vue';
           </div>
           <div class="mb-6 dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">
             <label class="block text-sm font-bold mb-2" for="message">
-              Message:
+              Bericht:
             </label>
             <textarea
               class=" textarea shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
@@ -84,8 +84,8 @@ export default {
           this.name = '';
           this.email = '';
           this.message = '';
-          this.isSubmitting = false;
           window.alert('Email sent successfully!');
+          this.isSubmitting = false;
           console.log('SUCCESS!', response.status, response.text);
         }, (error) => {
           this.isSubmitting = false;

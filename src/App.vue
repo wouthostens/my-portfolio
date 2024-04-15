@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, createApp } from 'vue'
 import projecten from './pages/projecten.vue'
 import education from './pages/education.vue'
 import notFound from './pages/notFound.vue'
@@ -8,7 +8,6 @@ import studentjobs from './pages/studentjobs.vue'
 import maze from './pages/maze.vue'
 import strava from './pages/strava.vue'
 import contact from './pages/contact.vue'
-
 
 const darkMode = ref(true);
 document.body.classList.add('dark');
@@ -50,6 +49,15 @@ const currentView = computed(() => {
 
 <script>
 export default {
+  metaInfo: {
+    // override the parent template and just define the meta tags for this page
+    meta: [
+      {
+        name: 'description',
+        content: 'This is my portfolio website where I showcase my projects, education, student jobs, and more. Feel free to contact me if you have any questions. My name is Wout Hostens.' 
+      }
+    ]
+  },
   data() {
     return {
       open: false,

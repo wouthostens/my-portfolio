@@ -3,9 +3,9 @@ import titlecomponent from '../components/title.vue';
 </script>
 
 <template>
-    <div class="overflow-auto ">
+    <div class=" ">
       <titlecomponent title="Strava" />
-      <div class="box  mx-auto sm:w-3/4 lg:w-1/2 w-full">
+      <div class="box overflow-auto mx-auto sm:w-3/4 lg:w-1/2 w-full">
         <div class="dark:bg-slate-800 bg-gray-200  rounded-lg shadow-lg p-5 md:p-10 mx-2 text-center">
           <div class="my-2 flex flex-col items-center">
             <div

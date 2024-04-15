@@ -106,7 +106,7 @@ export default {
           degree: 'informatica beheer',
           year: '2016-2019',
           school: 'Heilig Hartcollege Waregem',
-          discription: 'Tijdens deze opleiding heb ik veel bijgeleerd over het beheren van een netwerk en allerlei zaken binnen het programmeren. Dit was een ruime eerste kennismaken met het informatica verhaal waar verschillende aspecten aanbod kwamen. ',
+          discription: 'Tijdens deze opleiding heb ik veel bijgeleerd over het beheren van een netwerk en allerlei zaken binnen het programmeren. Dit was een ruime eerste kennismaking met het informatica verhaal waar verschillende aspecten aanbod kwamen. ',
           images: '/images/hhc.png',
           imageswebp: '/images/hhc.webp',
           link: 'https://www.collegewaregem.be/studieaanbod/3-de-graad/informatica-beheer',

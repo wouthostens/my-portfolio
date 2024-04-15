@@ -19,7 +19,7 @@ import titlecomponent from '../components/title.vue';
             </div>
             <p class="dark:text-slate-300">{{ education.school }}</p>
             <p class="dark:text-slate-400"> {{ education.discription }}</p>
-            <a :href="education.link"
+            <a target="_blank"  :href="education.link "
               class="dark:text-slate-300 dark:hover:text-yellow-500 block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline">Bekijk
               hier info over de opleiding</a>
             <div class="ml-10" v-if="education.internships">
@@ -32,7 +32,7 @@ import titlecomponent from '../components/title.vue';
                 </div>
                 <p class="dark:text-slate-400 my-2"> {{ internship.discription }}</p>
                 <p class="dark:text-slate-500">Skills: {{ internship.skills }}</p>
-                <a :href="internship.link"
+                <a target="_blank" :href="internship.link"
                   class="dark:text-slate-300 dark:hover:text-yellow-500 block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline">Bekijk
                   {{ internship.company }}</a>
               </div>
@@ -56,7 +56,7 @@ export default {
           school: 'Vives Kortrijk',
           discription: 'Tijdens deze opleiding heb ik veel bijgeleerd over het programmeren van microcontrollers en het elektriciteit/hardware verhaal. Eigenlijk kwam alles aanbod wat met het internet of things te maken heeft, zoals het programmeren van sensoren, aansluiten van sensoren en het netwerk beheer/communicatie verhaal.',
           status: '',
-          link: 'https://www.vives.be/nl/opleidingen/technologiecampus-kortrijk/graduaat/internet-of-things',
+          link: 'https://www.vives.be/nl/technology/internet-things',
           images: '/images/vives.png',
           imageswebp: '/images/vives.webp',
           internships: [
@@ -75,7 +75,7 @@ export default {
           school: 'Vives Kortrijk',
           discription: 'Tijdens deze opleiding heb ik veel bijgeleerd over alles wat met programmeren te maken heeft. Dit gaat dan over webapplicaties, desktop applicaties en mobiele applicaties. Ook heb ik veel bijgeleerd over het testen van code en het werken in teamverband. Om dit allemaal te kunnen doen kwam er ook een deel over databases en netwerken aanbod.',
           status: '',
-          link: 'https://www.vives.be/nl/opleidingen/technologiecampus-kortrijk/graduaat/programmeren',
+          link: 'https://www.vives.be/nl/handelswetenschappen-en-bedrijfskunde/programmeren',
           images: '/images/vives.png',
           imageswebp: '/images/vives.webp',
           internships: [

@@ -14,7 +14,7 @@ import titlecomponent from '../components/title.vue';
             <div class="dark:text-slate-300 uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ job.period }}</div>
             <p class="dark:text-slate-400">{{ job.description }}</p>
             <p class="dark:text-slate-500 mt-3" v-if="job.skills">Skills: {{ job.skills }}</p>
-            <a :href="job.link" class="dark:text-slate-300 dark:hover:text-yellow-500 block mb-4 text-lg leading-tight font-medium text-black hover:underline ">Bekijk {{ job.company }}</a>
+            <a target="_blank" :href="job.link" class="dark:text-slate-300 dark:hover:text-yellow-500 block mb-4 text-lg leading-tight font-medium text-black hover:underline ">Bekijk {{ job.company }}</a>
           </div>
           <img v-if="job.imagesWebp" :src="job.imagesWebp" alt="studenten job Image" class="ml-auto  w-16 h-16 object-cover rounded-full">
         </div>

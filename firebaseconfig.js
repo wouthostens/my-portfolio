@@ -3,7 +3,6 @@ import { getFirestore, collection } from 'firebase/firestore';
 
 const firebaseConfig = {
     //i know this is bad but please don't use my api key also if you even see this i'm sorry for the bad practice 
-    //i tried with env variables but it was not working beacause i'm hosting my website on one.com and it's not working with env variables
     apiKey: import.meta.env.VITE_APP_API_KEY,
     authDomain: import.meta.env.VITE_APP_AUTH_DOMAIN,
     databaseURL: import.meta.env.VITE_APP_DATABASE_URL,

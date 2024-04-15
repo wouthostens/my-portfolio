@@ -38,10 +38,10 @@ import titlecomponent from '../components/title.vue';
               class="dark:bg-yellow-500 dark:hover:bg-yellow-600 bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit">
               <span v-if="isSubmitting">
-                <i class="fas fa-spinner fa-spin"></i> Sending...
+                <i class="fas fa-spinner fa-spin"></i> Zenden...
               </span>
               <span v-else>
-                Submit
+                Zend mail
               </span>
             </button>
             <a class="inline-block align-baseline font-bold text-sm hover:text-indigo-700 dark:text-yellow-500 dark:hover:text-yellow-600 hover:underline"

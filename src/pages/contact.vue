@@ -69,7 +69,7 @@ export default {
   computed: {
     whatsappLink() {
       // Replace 'YOUR_PHONE_NUMBER' with your actual phone number
-      return `https://wa.me/+32468166869?text=${encodeURIComponent('Hi, I have a question.')}`;
+      return `https://wa.me/+32468166869?text=${encodeURIComponent('Hi, {{message}} friendly greetings from {{name}} here is my email: {{email}}')}`;
     },
   },
   methods: {

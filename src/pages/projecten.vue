@@ -26,17 +26,8 @@ import titlecomponent from '../components/title.vue';
   </div>
 </template>
 
-<script>
-import { h } from 'vue';
-export default {
-
-}
-
-</script>
-
 <style scoped>
 .box {
   height: 85vh;
-  widows: 50vh;
 }
 </style>

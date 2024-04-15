@@ -3,7 +3,7 @@ import titlecomponent from '../components/title.vue';
 </script>
 
 <template>
-  <div class=" ">
+  <div >
     <titlecomponent title="Home" />
     <div class="box mx-auto sm:w-3/4 lg:w-1/2 w-full">
       <link rel="preload" href="/images/wouthostens.webp" as="image">
@@ -33,11 +33,6 @@ import titlecomponent from '../components/title.vue';
     </div>
   </div>
 </template>
-
-
-<script>
-
-</script>
 
 <style scoped>
 .box {

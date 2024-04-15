@@ -114,7 +114,7 @@ export default {
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Contact <menu></menu></a>
           <span class="hidden lg:inline">|</span>
           <span @click="toggleDarkMode"
-            class="dark:text-slate-400 dark:hover:text-yellow-500 hover:text-indigo-500 text-gray-700 font-medium mx-2">
+            class="cursor-pointer dark:text-slate-400 dark:hover:text-yellow-500 hover:text-indigo-500 text-gray-700 font-medium mx-2">
             {{ darkMode ? '&#9728;' : '&#x1F324;' }}
           </span>
           <span class="hidden lg:inline">|</span>
@@ -126,69 +126,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style>
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 15px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  padding-top: 5px;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #EAB308;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 12px;
-  width: 12px;
-  left: 2px;
-  bottom: 1.5px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked+.slider {
-  background-color: #6366F1;
-}
-
-input:focus+.slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked+.slider:before {
-  -webkit-transform: translateX(15px);
-  -ms-transform: translateX(15px);
-  transform: translateX(15px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 15px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-</style>

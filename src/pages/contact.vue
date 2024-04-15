@@ -69,19 +69,18 @@ export default {
   },
   computed: {
     whatsappLink() {
-      const link = `https://wa.me/+32468166869?text=${encodeURIComponent(`Hey Wout,\n\n${this.message} \n\nFriendly greetings from\n${this.name}`)}`;
-      this.name = '';
-      this.email = '';
-      this.message = '';
-      return link;
+      return `https://wa.me/+32468166869?text=${encodeURIComponent(`Hey Wout,\n\n${this.message} \n\nFriendly greetings from\n${this.name}`)}`;
     },
   },
   methods: {
     openWhatsAppLink() {
-      if (this.name === ''  || this.message === '') {
+      if (this.name === '' || this.message === '') {
         return;
-      }else {
+      } else {
         window.open(this.whatsappLink, '_blank');
+        this.name = '';
+        this.email = '';
+        this.message = '';
       }
     },
     submitForm() {

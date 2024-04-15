@@ -7,7 +7,7 @@ import titlecomponent from '../components/title.vue';
     <titlecomponent title="Home" />
     <div class="box mx-auto sm:w-3/4 lg:w-1/2 w-full">
       <link rel="preload" href="/images/wouthostens.webp" as="image">
-      <div class="dark:bg-slate-800 bg-gray-200  rounded-lg shadow-lg p-5 md:p-10 mx-2 text-center">
+      <div class="dark:bg-slate-800 bg-gray-200  rounded-lg shadow-lg p-5 md:p-7 mx-2 text-center">
         <div class="my-2">
           <img class=" h-44 rounded-lg mx-auto " src="/images/wouthostens.webp" alt="Your Name">
         </div>
@@ -20,13 +20,14 @@ import titlecomponent from '../components/title.vue';
           programmeer wereld is het probleem oplossend denken.
         </p>
         <p class="dark:text-slate-400 text-gray-700 mt-4">
-          Je kunt mij bereiken via mijn gsm op <a href="tel:+32468166869"
+          Je kunt mij bereiken via mijn gsm op <a target="_blank" href="tel:+32468166869"
             class="dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 ">+32 468 16 68 69</a> <br> of
           contacteer me via
-          <a href="mailto:wout.hostens@gmail.com"
+          <a target="_blank" href="mailto:wout.hostens@gmail.com"
             class="dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 ">wout.hostens@gmail.com</a>.
-          <br> Je kan me ook bereiken via LinkedIn door<a href="https://www.linkedin.com/in/Wout-Hostens/"
-            class=" dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 "> hier</a> te klikken.
+          <br> Je kan me ook bereiken via LinkedIn door<a target="_blank" href="https://www.linkedin.com/in/Wout-Hostens/"
+            class=" dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500 "> hier</a> te klikken. <br>
+          <a class="dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500" target="_blank" href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-63acb.appspot.com/o/HostensWoutCV.pdf?alt=media&token=2ad6a5ec-bed8-49da-938c-7a1d90856164" download>Download hier mijn cv </a>
         </p>
       </div>
     </div>

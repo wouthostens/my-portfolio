@@ -7,7 +7,7 @@ import titlecomponent from '../components/title.vue';
     <titlecomponent title="Contacteer mij" />
     <div class="flex justify-center   overflow-auto box">
       <div class="w-full max-w-md">
-        <form @submit="submitForm"
+        <form @submit.prevent="submitForm"
           class="p-6 mx-auto dark:bg-slate-800 bg-gray-200 rounded-xl shadow-md overflow-hidden">
           <div class="mb-4 dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">
             <label class=" " for="name">
@@ -44,10 +44,11 @@ import titlecomponent from '../components/title.vue';
                 Zend mail
               </span>
             </button>
-            <a class="inline-block align-baseline font-bold text-sm hover:text-indigo-700 dark:text-yellow-500 dark:hover:text-yellow-600 hover:underline"
-              :href="whatsappLink">
-              Klik hier om me op whatsapp te contacteren
-            </a>
+            <button
+              class="dark:bg-yellow-500 dark:hover:bg-yellow-600 bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="button" @click="openWhatsAppLink">
+              Zend whatsapp bericht
+            </button>
           </div>
         </form>
       </div>
@@ -68,11 +69,21 @@ export default {
   },
   computed: {
     whatsappLink() {
-      // Replace 'YOUR_PHONE_NUMBER' with your actual phone number
-      return `https://wa.me/+32468166869?text=${encodeURIComponent('Hi, {{message}} friendly greetings from {{name}} here is my email: {{email}}')}`;
+      const link = `https://wa.me/+32468166869?text=${encodeURIComponent(`Hi, ${this.message} friendly greetings from ${this.name} here is my email: ${this.email}`)}`;
+      this.name = '';
+      this.email = '';
+      this.message = '';
+      return link;
     },
   },
   methods: {
+    openWhatsAppLink() {
+      if (this.name === '' || this.email === '' || this.message === '') {
+        return;
+      }else {
+        window.open(this.whatsappLink, '_blank');
+      }
+    },
     submitForm() {
       this.isSubmitting = true;
       emailjs.send(import.meta.env.VITE_APP_EMAIL_SERVICE_ID, import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID, {
@@ -84,7 +95,7 @@ export default {
           this.name = '';
           this.email = '';
           this.message = '';
-          window.alert('Email sent successfully!');
+          window.alert('Messaged sent successfully!');
           this.isSubmitting = false;
           console.log('SUCCESS!', response.status, response.text);
         }, (error) => {

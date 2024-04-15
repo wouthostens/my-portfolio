@@ -69,7 +69,7 @@ export default {
   },
   computed: {
     whatsappLink() {
-      const link = `https://wa.me/+32468166869?text=${encodeURIComponent(`Hi, ${this.message} friendly greetings from ${this.name} here is my email: ${this.email}`)}`;
+      const link = `https://wa.me/+32468166869?text=${encodeURIComponent(`Hi, \n ${this.message}\n friendly greetings from ${this.name}\n here is my email: ${this.email}`)}`;
       this.name = '';
       this.email = '';
       this.message = '';

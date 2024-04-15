@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     openWhatsAppLink() {
-      if (this.name === '' || this.email === '' || this.message === '') {
+      if (this.name === ''  || this.message === '') {
         return;
       }else {
         window.open(this.whatsappLink, '_blank');

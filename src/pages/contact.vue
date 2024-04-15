@@ -75,7 +75,7 @@ export default {
   methods: {
     submitForm() {
       this.isSubmitting = true;
-      emailjs.send(import.meta.env.VITE_APP_EMAil_SERVICE_ID, import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID, {
+      emailjs.send(import.meta.env.VITE_APP_EMAIL_SERVICE_ID, import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID, {
         name: this.name,
         email: this.email,
         message: this.message,

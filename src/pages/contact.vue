@@ -56,6 +56,7 @@ import titlecomponent from '../components/title.vue';
 </template>
 <script>
 import emailjs from 'emailjs-com';
+
 export default {
   data() {
     return {
@@ -74,14 +75,11 @@ export default {
   methods: {
     submitForm() {
       this.isSubmitting = true;
-      servicesID = import.meta.env.VITE_APP_EMAil_SERVICE_ID;
-      templateID = import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID;
-      userID = import.meta.env.VITE_APP_EMAIL_USER_ID;
-      emailjs.send(serviceID, templateID, {
+      emailjs.send(import.meta.env.VITE_APP_EMAil_SERVICE_ID, import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID, {
         name: this.name,
         email: this.email,
         message: this.message,
-      }, userID)
+      }, import.meta.env.VITE_APP_EMAIL_USER_ID)
         .then((response) => {
           this.name = '';
           this.email = '';

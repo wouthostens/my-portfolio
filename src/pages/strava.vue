@@ -3,7 +3,7 @@ import titlecomponent from '../components/title.vue';
 </script>
 
 <template>
-  <div class=" ">
+  <div>
     <titlecomponent title="Strava" />
     <div class="box overflow-auto ">
       <div class="mx-auto sm:w-3/4 lg:w-1/2 w-full">
@@ -29,11 +29,6 @@ import titlecomponent from '../components/title.vue';
 
   </div>
 </template>
-
-
-<script>
-
-</script>
 
 <style scoped>
 .box {

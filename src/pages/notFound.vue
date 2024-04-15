@@ -16,17 +16,17 @@ import titlecomponent from '../components/title.vue';
             terug naar de homepagina</a>
           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <div class="relative group">
-              <img src="/images/Poes.jpg" alt="404" class="w-64 h-64 object-cover rounded-full">
+              <img src="/images/Poes.jpg" alt="404Charlie" class="w-64 h-64 object-cover rounded-full">
               <span
                 class="hidden group-hover:block absolute bottom-0 bg-black bg-opacity-50 text-white w-full text-center py-2">Charlie</span>
             </div>
             <div class="relative group">
-              <img src="/images/Poes3.jpg" alt="404" class="w-64 h-64 object-cover rounded-full">
+              <img src="/images/Poes3.jpg" alt="404Billy" class="w-64 h-64 object-cover rounded-full">
               <span
                 class="hidden group-hover:block absolute bottom-0 bg-black bg-opacity-50 text-white w-full text-center py-2">Billy</span>
             </div>
             <div class="relative group">
-              <img src="/images/Poes2.jpg" alt="404" class="w-64 h-64 object-cover rounded-full">
+              <img src="/images/Poes2.jpg" alt="404Briek" class="w-64 h-64 object-cover rounded-full">
               <span
                 class="hidden group-hover:block absolute bottom-0 bg-black bg-opacity-50 text-white w-full text-center py-2">Briek</span>
             </div>
@@ -37,11 +37,3 @@ import titlecomponent from '../components/title.vue';
   </div>
 </template>
 
-<script>
-export default {
-
-}
-
-</script>
-
-<style scoped></style>

@@ -38,7 +38,7 @@ import titlecomponent from '../components/title.vue';
               </div>
             </div>
           </div>
-          <img :src="education.imageswebp" alt="Education Image" class="ml-auto  w-16 h-16 object-cover rounded-full">
+          <img :src="education.imageswebp" :alt="education.imageswebp" class="ml-auto  w-16 h-16 object-cover rounded-full">
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ defineProps({
       <link rel="preload" :href="projectImageWebp" as="image">
       <div class="md:flex">
         <div class="md:shrink-0">
-          <img class=" m-5 object-cover w-32 h-43  rounded-lg" :src="projectImageWebp" alt="Simon Says">
+          <img class=" m-5 object-cover w-32 h-43  rounded-lg" :src="projectImageWebp" :alt="projectImageWebp">
         </div>
         <div class="pb-8 mt-5">
           <div class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ projectTitle }}</div>

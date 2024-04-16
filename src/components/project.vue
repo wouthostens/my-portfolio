@@ -18,7 +18,7 @@ defineProps({
   <box extraClass="content-left mx-auto mb-5 w-full text-left sm:w-3/4 lg:w-1/2">
     <div class="flex">
       <div class="md:shrink-0">
-        <squareimage :src="projectImage" :alt="projectTitle" extraClass="w-full sm:w-32 h-full sm:h-43 object-cover mr-5" />
+        <squareimage :src="projectImage" :alt="projectTitle" extraClass="sm:w-32 lg:w-32 w-full h-43  rounded-lg mr-5" />
       </div>
       <div>
         <semiboldtitle :title="projectTitle" />

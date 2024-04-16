@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" :class="[' rounded-lg mx-auto m-2  object-cover', extraClass]" />
+  <img :src="src" :alt="alt" :class="[' rounded-lg mx-auto m-2  ', extraClass]" />
 </template>
 
 <script>

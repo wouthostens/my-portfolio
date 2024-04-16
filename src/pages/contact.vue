@@ -1,10 +1,10 @@
 <script setup>
-import titlecomponent from '../components/title.vue';
+import TitleComponent from '../components/title.vue';
 </script>
 
 <template>
   <div>
-    <titlecomponent title="Contacteer mij" />
+    <TitleComponent title="Contacteer mij" />
     <div class="h-85vh flex justify-center overflow-auto">
       <div class="w-full max-w-md">
         <form @submit.prevent="submitForm"

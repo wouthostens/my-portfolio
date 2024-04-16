@@ -1,5 +1,5 @@
 <script setup>
-import titlecomponent from '../components/title.vue';
+import TitleComponent from '../components/title.vue';
 import db, { scoreRef } from '../../firebaseconfig';
 import { query, orderBy, limit, getDoc, getDocs, doc, setDoc, Timestamp } from "firebase/firestore";
 import 'firebase/firestore';
@@ -8,7 +8,7 @@ import description from '../components/description.vue';
 
 <template>
     <div>
-        <titlecomponent title="Snake game" />
+        <TitleComponent title="Snake game" />
         <div class="h-85vh overflow-auto ">
             <div
                 class=" game-board items-center w-full sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg  dark:text-slate-400 dark:bg-slate-800 bg-gray-200">

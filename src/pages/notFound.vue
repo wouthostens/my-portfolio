@@ -1,10 +1,10 @@
 <script setup>
-import titlecomponent from '../components/title.vue';
+import TitleComponent from '../components/title.vue';
 </script>
 
 <template>
   <div>
-    <titlecomponent title="Not Found" />
+    <TitleComponent title="Not Found" />
     <div class="box overflow-auto">
       <div
         class="dark:bg-slate-800 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden flex">

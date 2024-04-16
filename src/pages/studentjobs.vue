@@ -1,5 +1,5 @@
 <script setup>
-import titlecomponent from '../components/title.vue';
+import TitleComponent from '../components/title.vue';
 import roundimage from '../components/roundimage.vue';
 import description from '../components/description.vue';
 import box from '../components/box.vue';
@@ -9,7 +9,7 @@ import LinkComponent from '../components/contactLink.vue';
 
 <template>
   <div>
-    <titlecomponent title="Studenten jobs" />
+    <TitleComponent title="Studenten jobs" />
     <div class="h-85vh overflow-auto">
       <div class="pb-5" v-for="(job, index) in jobs" :key="index">
         <link rel="preload" :href="job.imagesWebp" as="image">
@@ -39,7 +39,7 @@ export default {
           period: 'jan 2016 - heden',
           images: '/images/codefever.jpg',
           imagesWebp: '/images/codefever.webp',
-          description: 'Hierbij geef ik les aan kinderen van het tweede leerjaar tot ze het hele traject hebben doorlopen +- 16j. Ik leer hen samen met assistenten of als assistent de basis concepten van programmeren aan. Dit gebeurd in een eerste fase aan de hand van scratch en minecraft education. In een latere fase leren ze html, css, javascript, python en maken ze gebruik van een microbit.',
+          description: 'Hierbij geef ik les aan kinderen van het tweede leerjaar tot ze het hele traject hebben doorlopen, ongeveer tot ze 16 jaar oud zijn. Ik leer hen, samen met assistenten of als assistent, de basisconcepten van programmeren. Dit gebeurt in eerste instantie met behulp van Scratch en Minecraft Education. In latere fasen leren ze HTML, CSS, JavaScript, Python en maken ze gebruik van een microbit.',
           skills: 'Scratch, Minecraft Education, HTML CSS JS, Python en Microbit',
           link: 'https://www.codefever.be/'
         },
@@ -49,7 +49,7 @@ export default {
           period: 'okt 2022 - aug 2023 & jan 2024 - apr 2024',
           images: '/images/vedelux.png',
           imagesWebp: '/images/vedelux.webp',
-          description: 'Bestaande scanning app uitbreiden en omvormen zodat er geen gebruik gemaakt wordt van excel data maar van firebase. Meer uitleg kan je vinden bij projecten. Ook heb ik allerlei andere dingen aan de hand met Python geautomatiseerd zodat er minder manueel werk nodig was bij de werknemers. ',
+          description: 'Ik ben bezig met het uitbreiden en herstructureren van een bestaande scantoepassing, zodat deze niet langer afhankelijk is van Excel-gegevens maar gebruikmaakt van Firebase. Meer details zijn te vinden bij de projecten. Daarnaast heb ik met behulp van Python verschillende taken geautomatiseerd, waardoor werknemers minder handmatig werk hoeven te verrichten.',
           skills: 'Python, Kotlin en HTML CSS JS',
           link: 'https://www.vedelux.be/'
         },
@@ -57,7 +57,7 @@ export default {
           title: 'Jobstudent bij Exante IT',
           company: 'Exante IT',
           period: 'jul 2022 - aug 2022',
-          description: 'Verder ontwikkelen van een app in kotlin. Voor de data opslag werd gebruik gemaakt van een firebase database. Waren vooral basis dingen en kleine aanpassingen.',
+          description: 'Ik heb geholpen met het verder ontwikkelen van een app in kotlin. Voor de data opslag werd gebruik gemaakt van een firebase database. Waren vooral basis dingen en kleine aanpassingen.',
           skills: 'Kotlin',
           link: 'https://www.exante-it.be/'
         },
@@ -68,7 +68,7 @@ export default {
           images: '/images/groepubuntu.png',
           imagesWebp: '/images/groepubuntu.webp',
           skills: 'Python',
-          description: 'Netwerkkabels situeren & controleren, nieuwe pc’s installeren en in domein steken. Invoegen of aanpassen van data waarbij ik gebruik heb gemaakt van een klein python script om dit makkelijker te laten verlopen.',
+          description: 'Ik heb mij beziggehouden met het lokaliseren en controleren van netwerkkabels, het installeren van nieuwe pc\'s en het toevoegen van deze pc\'s aan het domein. Daarnaast heb ik gegevens ingevoegd of aangepast, waarbij ik gebruik heb gemaakt van een klein Python-script om dit proces te vereenvoudigen.',
           link: 'https://groepubuntu.be/ '
         }
       ]

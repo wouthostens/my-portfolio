@@ -1,21 +1,21 @@
 <script setup>
-import titlecomponent from '../components/title.vue';
+import TitleComponent from '../components/title.vue';
 import ContactLink from '../components/contactLink.vue';
 import ImageComponent from '../components/squareimage.vue';
-import SubtitleComponent from '../components/subtitle.vue';
+import SubTitleComponent from '../components/subtitle.vue';
 import BoxComponent from '../components/box.vue';
 import DescriptionComponent from '../components/description.vue';
 </script>
 
 <template>
   <div>
-    <titlecomponent title="Home" />
+    <TitleComponent title="Home" />
     <div class="h-85vh mx-auto sm:w-3/4 lg:w-1/2 w-full">
       <link rel="preload" href="/images/wouthostens.webp" as="image">
       <BoxComponent extraClass="text-center">
         <ImageComponent src="/images/wouthostens.webp" alt="Your Name" extraClass="h-44" />
-        <titlecomponent title="Wout Hostens" />
-        <SubtitleComponent title="Software Developer" />
+        <TitleComponent title="Wout Hostens" />
+        <SubTitleComponent title="Software Developer" />
         <DescriptionComponent>
           Hey, mijn naam is Wout Hostens, geboren op 24 mei 2000 en momenteel woonachtig in Avelgem, België. In het
           dagelijkse leven probeer ik wat loopkilometers te verzamelen afhankelijk van het weer natuurlijk. Mijn sterke

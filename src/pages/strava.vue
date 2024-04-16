@@ -1,12 +1,12 @@
 <script setup>
-import titlecomponent from '../components/title.vue';
+import TitleComponent from '../components/title.vue';
 import BoxComponent from '../components/box.vue';
 import DescriptionComponent from '../components/description.vue';
 </script>
 
 <template>
   <div>
-    <titlecomponent title="Strava" />
+    <TitleComponent title="Strava" />
     <div class="h-85vh overflow-auto ">
         <BoxComponent extraClass=" flex flex-col items-center mx-auto sm:w-3/4 lg:w-1/2 w-full">
             <DescriptionComponent>

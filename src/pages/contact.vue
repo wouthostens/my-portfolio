@@ -75,6 +75,7 @@ export default {
   methods: {
     openWhatsAppLink() {
       if (this.name === '' || this.message === '') {
+        window.alert('Gelieve je naam en bericht in te vullen.');
         return;
       } else {
         window.open(this.whatsappLink, '_blank');

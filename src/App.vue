@@ -92,11 +92,11 @@ export default {
           <a @click="open = false" href="#/"
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Over
             Mezelf</a>
-          <span class="hidden lg:inline">|
-          </span> <a @click="open = false" href="#/projecten"
+          <span class="hidden lg:inline">| </span> 
+          <a @click="open = false" href="#/projecten"
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Projecten</a>
-          <span class="hidden lg:inline">|
-          </span> <a @click="open = false" href="#/education"
+          <span class="hidden lg:inline">| </span> 
+          <a @click="open = false" href="#/education"
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">School</a>
           <span class="hidden lg:inline">| </span>
           <a @click="open = false" href="#/studentjobs"

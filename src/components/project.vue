@@ -17,7 +17,9 @@ defineProps({
 <template>
   <box extraClass="content-left mx-auto mb-5 w-full text-left sm:w-3/4 lg:w-1/2">
     <div class="flex">
-      <squareimage :src="projectImage" :alt="projectTitle" extraClass="h-43 w-32 mr-4" />
+      <div class="md:shrink-0">
+        <squareimage :src="projectImage" :alt="projectTitle" extraClass=" w-32 h-43   mr-5" />
+      </div>
       <div>
         <semiboldtitle :title="projectTitle" />
         <DescriptionComponent>{{ projectDescription }}</DescriptionComponent>

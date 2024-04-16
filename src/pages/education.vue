@@ -1,44 +1,36 @@
 <script setup>
 import titlecomponent from '../components/title.vue';
+import LinkComponent from '../components/contactLink.vue';
+import DescriptionComponent from '../components/description.vue';
+import roundimage from '../components/roundimage.vue';
+import subtitlewithdate from '../components/subtitlewithdate.vue';
 </script>
 
 <template>
   <div>
     <titlecomponent title="Opleidingen en stages" />
-    <div class="box overflow-auto">
+    <div class="h-85vh overflow-auto">
       <div class="pb-5" v-for="(education, index) in timeline" :key="index">
         <link rel="preload" :href="education.imageswebp" as="image">
         <div
           class="dark:bg-slate-800 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden flex">
           <div>
-            <h3 class="dark:text-slate-300 text-lg font-semibold">Opleidingen:</h3>
-            <div class="flex items-center">
-              <div class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{
-        education.degree }}</div>
-              <p class="dark:text-slate-300 ml-5 ">{{ education.year }}</p>
-            </div>
+            <subtitlewithdate :title="education.degree" :date="education.year" />
             <p class="dark:text-slate-300">{{ education.school }}</p>
-            <p class="dark:text-slate-400"> {{ education.discription }}</p>
-            <a target="_blank"  :href="education.link "
-              class="dark:text-slate-300 dark:hover:text-yellow-500 block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline">Bekijk
-              hier info over de opleiding</a>
+            <DescriptionComponent> {{ education.discription }}</DescriptionComponent>
+            <LinkComponent :href="education.link" :text="'Bekijk info over ' + education.degree"
+              aClass="block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline"></LinkComponent>
             <div class="ml-10" v-if="education.internships">
-              <h3 class="dark:text-slate-300 text-lg font-semibold">Stages:</h3>
               <div v-for="(internship, index) in education.internships" :key="index">
-                <div class="flex">
-                  <p class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">Stage
-                    bij {{ internship.company }}</p>
-                  <p class="dark:text-slate-300 ml-5">{{ internship.period }}</p>
-                </div>
-                <p class="dark:text-slate-400 my-2"> {{ internship.discription }}</p>
+                <subtitlewithdate :title="'stagair bij ' + internship.company" :date="internship.period" />
+                <DescriptionComponent> {{ internship.discription }}</DescriptionComponent>
                 <p class="dark:text-slate-500">Skills: {{ internship.skills }}</p>
-                <a target="_blank" :href="internship.link"
-                  class="dark:text-slate-300 dark:hover:text-yellow-500 block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline">Bekijk
-                  {{ internship.company }}</a>
+                <LinkComponent :href="internship.link" :text="'Bekijk ' + internship.company"
+                  aClass="block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline"></LinkComponent>
               </div>
             </div>
           </div>
-          <img :src="education.imageswebp" :alt="education.imageswebp" class="ml-auto  w-16 h-16 object-cover rounded-full">
+          <roundimage :src="education.imageswebp" :alt="education.imageswebp"/>
         </div>
       </div>
     </div>
@@ -90,7 +82,7 @@ export default {
               company: 'Sweet Mustard',
               period: 'jan 2021 - jun 2021',
               skills: 'Springboot, Java, React & Redux',
-              discription: 'Bij Sweet Mustard heb ik met 2 frontend stagairs een applicatie gemaakt die cv’s kan genereren. Ik heb vooral gewerkt aan de backend. Hier heb ik veel bijgeleerd over springboot en java. Tussendoor heb ik ook heel wat zaken van React en Redux kunnen bijleren door de samenwerking met de frontend stagairs.',
+              discription: 'Bij Sweet Mustard heb ik met 2 frontend studenten een applicatie gemaakt die cv’s kan genereren. Ik heb vooral gewerkt aan de backend. Hier heb ik veel bijgeleerd over springboot en java. Tussendoor heb ik ook heel wat zaken van React en Redux kunnen bijleren door de samenwerking met de frontend studenten.',
               link: 'https://www.sweetmustard.be/'
             },
             {
@@ -117,9 +109,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.box {
-  height: 85vh;
-}
-</style>

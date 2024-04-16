@@ -6,7 +6,12 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        '85vh': '85vh',
+        '25vh': '25vh',
+      }
+    },
   },
   plugins: [],
 }

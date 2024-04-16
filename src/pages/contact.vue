@@ -5,7 +5,7 @@ import titlecomponent from '../components/title.vue';
 <template>
   <div>
     <titlecomponent title="Contacteer mij" />
-    <div class="flex justify-center   overflow-auto box">
+    <div class="h-85vh flex justify-center overflow-auto">
       <div class="w-full max-w-md">
         <form @submit.prevent="submitForm"
           class="p-6 mx-auto dark:bg-slate-800 bg-gray-200 rounded-xl shadow-md overflow-hidden">
@@ -30,7 +30,7 @@ import titlecomponent from '../components/title.vue';
               Bericht:
             </label>
             <textarea
-              class=" textarea shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              class="h-25vh shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               id="message" v-model="message" required></textarea>
           </div>
           <div class="flex items-center justify-between">
@@ -69,7 +69,7 @@ export default {
   },
   computed: {
     whatsappLink() {
-      return `https://wa.me/+32468166869?text=${encodeURIComponent(`Hey Wout,\n\n${this.message} \n\nFriendly greetings from\n${this.name}`)}`;
+      return `https://wa.me/+32468166869?text=${encodeURIComponent(`Hey Wout,\n\n${this.message} \n\nVriendelijke groetjes\n${this.name}`)}`;
     },
   },
   methods: {
@@ -106,13 +106,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.box {
-  height: 85vh;
-}
-
-.textarea {
-  min-height: 25vh;
-}
-</style>

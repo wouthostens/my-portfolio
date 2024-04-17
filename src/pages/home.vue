@@ -15,7 +15,7 @@ import DescriptionComponent from '../components/description.vue';
         <link rel="prefetch" href="/images/wouthostens.webp" as="image">
         <BoxComponent extraClass="text-center">
           <ImageComponent src="/images/wouthostens.webp" alt="Wout Hostens" extraClass=" h-44 mx-auto" />
-          <TitleComponent title="Wout Hostens" height="text-4xl text-red-500 font-bold" />
+          <TitleComponent title="Wout Hostens" height="text-4xl font-bold" />
           <SubTitleComponent title="Software Developer" />
           <DescriptionComponent>
             Hey, mijn naam is Wout Hostens, geboren op 24 mei 2000 en momenteel woonachtig in Avelgem, België. In het

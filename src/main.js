@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
+import { createMetaManager } from 'vue-meta'
+import 'tailwindcss/tailwind.css' // Import Tailwind CSS
 
-
-createApp(App).mount('#projects')
+const app = createApp(App)
+app.use(createMetaManager())
+app.mount('#projects')

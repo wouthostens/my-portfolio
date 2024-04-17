@@ -1,12 +1,21 @@
 <script setup>
 defineProps({
   title: String,
+  font: {
+    type: String,
+    default: 'font-bold'
+  },
+  height: {
+    type: String,
+    default: 'my-1'
+  },
+  otherCss: String
 });
 </script>
 
 <template>
   <div>
-    <h1 class="mx-auto my-1 text-center text-2xl font-bold text-indigo-500 dark:text-yellow-500">
+    <h1 :class="`${height} mx-auto text-center text-2xl  text-indigo-500 dark:text-yellow-500 ${font} ${otherCss}`">
       {{ title }}
     </h1>
   </div>

@@ -14,7 +14,7 @@ import StravaIframe from '../components/stravaiframe.vue';
       href="https://www.strava.com/athletes/7422402/activity-summary/fa96379fe34efd1a6d0a7982ff862e0c6f5a284b"
       as="document">
     <TitleComponent title="Strava" />
-    <div class="h-85vh overflow-auto ">
+    <div class="h-85vh overflow-auto pb-5">
       <BoxComponent extraClass=" flex flex-col items-center mx-auto sm:w-3/4 lg:w-1/2 w-full">
         <DescriptionComponent>
           Hier kan je  een overzicht van deze week zien alsook een oplijsting van mijn laatste 5 loopjes. Ik loop

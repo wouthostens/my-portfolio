@@ -9,7 +9,7 @@ import description from '../components/description.vue';
 <template>
     <div>
         <TitleComponent title="Snake game" />
-        <div class="h-85vh overflow-auto ">
+        <div class="h-85vh overflow-auto pb-5 ">
             <div
                 class=" game-board items-center w-full sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg  dark:text-slate-400 dark:bg-slate-800 bg-gray-200">
                     <description extraClass="mx-5 text-center">Gebruik de pijltoetsen om de slang te besturen. Het doel is om

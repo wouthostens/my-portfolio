@@ -8,7 +8,7 @@ import DescriptionComponent from '../components/description.vue';
 </script>
 
 <template>
-  <div>
+  <div >
     <TitleComponent title="Over mezelf" />
     <div class="overflow-auto">
       <div class="h-85vh mx-auto sm:w-3/4 lg:w-1/2 w-full ">
@@ -43,9 +43,3 @@ import DescriptionComponent from '../components/description.vue';
     </div>
   </div>
 </template>
-
-<style scoped>
-.hero-image {
-  background-image: url('/images/wouthostens.jpg');
-}
-</style>

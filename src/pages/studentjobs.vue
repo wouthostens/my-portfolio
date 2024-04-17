@@ -12,7 +12,7 @@ import LinkComponent from '../components/contactLink.vue';
     <TitleComponent title="Studenten jobs" />
     <div class="h-85vh overflow-auto">
       <div class="pb-5" v-for="(job, index) in jobs" :key="index">
-        <link rel="preload" :href="job.imagesWebp" as="image">
+        <link rel="prefetch" :href="job.imagesWebp" as="image">
         <box extraClass="w-full sm:w-3/4 lg:w-1/2 mx-auto flex">
           <div>
             <subtitlewithdate :title="job.title" :date="job.period" />

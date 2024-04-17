@@ -11,7 +11,7 @@ import DescriptionComponent from '../components/description.vue';
   <div>
     <TitleComponent title="Home" />
     <div class="h-85vh mx-auto sm:w-3/4 lg:w-1/2 w-full">
-      <link rel="preload" href="/images/wouthostens.webp" as="image">
+      <link rel="prefetch" href="/images/wouthostens.webp" as="image">
       <BoxComponent extraClass="text-center">
         <ImageComponent src="/images/wouthostens.webp" alt="Wout Hostens" extraClass="h-44" />
         <TitleComponent title="Wout Hostens" />

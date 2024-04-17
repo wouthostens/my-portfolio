@@ -11,7 +11,7 @@ import subtitlewithdate from '../components/subtitlewithdate.vue';
     <TitleComponent title="Opleidingen en stages" />
     <div class="h-85vh overflow-auto">
       <div class="pb-5" v-for="(education, index) in timeline" :key="index">
-        <link rel="preload" :href="education.imageswebp" as="image">
+        <link rel="prefetch" :href="education.imageswebp" as="image">
         <div
           class="dark:bg-slate-800 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden flex">
           <div>

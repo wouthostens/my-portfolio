@@ -17,15 +17,7 @@ import DescriptionComponent from '../components/description.vue';
           <ImageComponent src="/images/wouthostens.webp" alt="Wout Hostens" extraClass=" h-44 mx-auto" />
           <TitleComponent title="Wout Hostens" height="text-4xl font-bold" />
           <SubTitleComponent title="Software Developer" />
-          <DescriptionComponent>
-            Hey, mijn naam is Wout Hostens, geboren op 24 mei 2000 en momenteel woonachtig in Avelgem, België. In het
-            dagelijkse leven probeer ik wat loopkilometers te verzamelen afhankelijk van het weer natuurlijk. Mijn
-            sterke
-            punten liggen vooral in het backend gedeelte van software
-            ontwikkeling.
-            Ik voel me thuis bij het ontwerpen van websites en applicaties. Wat me het meeste aanspreekt aan de
-            programmeer wereld is het probleemoplossend denken.
-          </DescriptionComponent>
+          <DescriptionComponent description='Hey daar! Ik ben Wout Hostens, geboren op 24 mei 2000 en momenteel woonachtig in het prachtige Avelgem, België. Als ik niet bezig ben met code, kun je me vaak buiten vinden terwijl ik wat loopkilometers verzamel - afhankelijk van het weer natuurlijk!<br><br>Mijn passie ligt voornamelijk in het backend gedeelte van softwareontwikkeling. Ik voel me helemaal in mijn element bij het ontwerpen van websites en applicaties, waarbij ik mijn skills inzet om solide en efficiënte systemen te creëren.<br><br>Wat mij het meeste aanspreekt aan de programmeerwereld is het probleemoplossend denken. Ik geniet ervan om uitdagingen aan te gaan en creatieve oplossingen te bedenken voor complexe problemen. Kortom, ik ben gepassioneerd, gedreven en altijd klaar voor een nieuwe uitdaging!' />
           <ContactLink href="tel:+32468166869" text="+32 468 16 68 69">
             Je kunt mij bereiken via mijn gsm op
           </ContactLink>

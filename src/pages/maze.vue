@@ -10,15 +10,11 @@ import description from '../components/description.vue';
     <div>
         <TitleComponent title="Snake game" />
         <div class="h-85vh overflow-auto pb-5 ">
-            <div @touchstart="handleTouchStart" @touchend="handleTouchEnd" @touchmove="isPlaying ? $event.preventDefault() : null"
+            <div @touchstart="handleTouchStart" @touchend="handleTouchEnd"
+                @touchmove="isPlaying ? $event.preventDefault() : null"
                 class=" game-board  items-center w-full sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg  dark:text-slate-400 dark:bg-slate-800 bg-gray-200">
-                <description extraClass="mx-5 text-center">Gebruik de pijltoetsen om de slang te besturen. Het doel is
-                    om
-                    het rode voedsel te eten en de muren te vermijden. Elke keer dat je het voedsel eet,
-                    neemt je score toe. Wees voorzichtig, want het spel wordt uitdagender met extra muren die elke 5
-                    punten
-                    verschijnen. Veel succes!!
-                </description>
+                <description extraClass="mx-5 text-center"
+                    description="Gebruik de pijltoetsen om de slang te besturen of verander van richting door te swipen op je smartphone. Zodra je begint met het spel, zal het scrollen op je smartphone niet meer mogelijk zijn totdat het spel voorbij is. Het doel is simpel: eet het rode voedsel en vermijd de muren. Elke keer dat je het voedsel opeet, zal je score toenemen. Maar pas op! Het spel wordt steeds uitdagender met extra muren die elke 5 punten verschijnen. Veel succes en laat die slang lekker groeien!" />
                 <div v-for="(row, i) in gameBoard" :key="i"
                     class="row border  border-indigo-400 dark:border-yellow-500">
                     <div v-for="(cell, j) in row" :key="j"

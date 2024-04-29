@@ -16,11 +16,7 @@ import StravaIframe from '../components/stravaiframe.vue';
     <TitleComponent title="Strava" />
     <div class="h-85vh overflow-auto pb-5">
       <BoxComponent extraClass=" flex flex-col items-center mx-auto sm:w-3/4 lg:w-1/2 w-full">
-        <DescriptionComponent>
-          Hier kan je  een overzicht van deze week zien alsook een oplijsting van mijn laatste 5 loopjes. Ik loop
-          graag als ontspanning, maar alleen wanneer het weer aangenaam is. Dit doe ik meestal in de omgeving van
-          Avelgem. Het doel is om ooit een marathon te lopen.
-        </DescriptionComponent>
+        <DescriptionComponent description="Hier kun je een overzicht van mijn loopweek vinden, samen met een lijst van mijn laatste 5 loopjes. Ik geniet van mijn tijd buiten tijdens het rennen, maar als het weer het niet toelaat, ben ik uitzonderlijk ook wel eens te vinden op de loopband. Meestal verken ik de prachtige omgeving van Avelgem tijdens mijn runs. Mijn ultieme doel? Ooit een marathon lopen!"/>
         <StravaIframe src="activity-summary" />
         <StravaIframe src="latest-rides" height="454" />
       </BoxComponent>

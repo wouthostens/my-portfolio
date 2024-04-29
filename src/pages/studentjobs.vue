@@ -16,7 +16,7 @@ import LinkComponent from '../components/contactLink.vue';
         <box extraClass="w-full sm:w-3/4 lg:w-1/2 mx-auto flex">
           <div>
             <subtitlewithdate :title="job.title" :date="job.period" />
-            <description> {{ job.description }} </description>
+            <description :description="job.description"/>
             <p class="dark:text-slate-500 mt-3" v-if="job.skills">Skills: {{ job.skills }}</p>
             <LinkComponent :href="job.link" :text="'Bekijk ' + job.company"
               aClass="block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline"></LinkComponent>
@@ -39,7 +39,7 @@ export default {
           period: 'jan 2016 - heden',
           images: '/images/codefever.jpg',
           imagesWebp: '/images/codefever.webp',
-          description: 'Hierbij geef ik les aan kinderen van het tweede leerjaar tot ze het hele traject hebben doorlopen, ongeveer tot ze 16 jaar oud zijn. Ik leer hen, samen met assistenten of als assistent, de basisconcepten van programmeren. Dit gebeurt in eerste instantie met behulp van Scratch en Minecraft Education. In latere fasen leren ze HTML, CSS, JavaScript, Python en maken ze gebruik van een microbit.',
+          description: 'Ik heb het voorrecht om les te geven aan kinderen van het tweede leerjaar tot ze ongeveer 16 jaar oud zijn. Samen met mijn geweldige assistenten of als assistent zelf, breng ik ze de basis van programmeren bij. We beginnen met leuke tools zoals Scratch en Minecraft Education om hun creativiteit te stimuleren.<br><br>Naarmate ze groeien, gaan we dieper in op de wereld van coderen. Van HTML en CSS tot JavaScript en Python, ze duiken in een spannende reis door verschillende programmeertalen. En alsof dat nog niet genoeg is, laten we ze zelfs experimenteren met microbits om echte hardware te programmeren! Het is geweldig om te zien hoe ze zich ontwikkelen en zichzelf uitdagen om nieuwe vaardigheden te leren.',
           skills: 'Scratch, Minecraft Education, HTML CSS JS, Python en Microbit',
           link: 'https://www.codefever.be/'
         },
@@ -49,7 +49,7 @@ export default {
           period: 'okt 2022 - aug 2023 & jan 2024 - apr 2024',
           images: '/images/vedelux.png',
           imagesWebp: '/images/vedelux.webp',
-          description: 'Ik ben bezig met het uitbreiden en herstructureren van een bestaande scantoepassing, zodat deze niet langer afhankelijk is van Excel-gegevens maar gebruikmaakt van Firebase. Meer details zijn te vinden bij de projecten. Daarnaast heb ik met behulp van Python verschillende taken geautomatiseerd, waardoor werknemers minder handmatig werk hoeven te verrichten.',
+          description: 'Momenteel werk ik aan het uitbreiden en herstructureren van een bestaande scantoepassing. Het doel? Om deze applicatie minder afhankelijk te maken van Excel-gegevens en in plaats daarvan te laten draaien op Firebase. Voor meer gedetailleerde informatie over dit project, nodig ik je uit om een kijkje te nemen bij mijn projecten.<br><br>Daarnaast heb ik met behulp van Python verschillende taken weten te automatiseren. Hierdoor hebben werknemers minder handmatig werk te verrichten, wat zorgt voor een efficiëntere workflow en meer tijd voor belangrijkere taken.',
           skills: 'Python, Kotlin en HTML CSS JS',
           link: 'https://www.vedelux.be/'
         },
@@ -57,7 +57,7 @@ export default {
           title: 'Jobstudent bij Exante IT',
           company: 'Exante IT',
           period: 'jul 2022 - aug 2022',
-          description: 'Ik heb geholpen met het verder ontwikkelen van een app in kotlin. Voor de data opslag werd gebruik gemaakt van een firebase database. Waren vooral basis dingen en kleine aanpassingen.',
+          description: 'Ik heb een handje geholpen bij de verdere ontwikkeling van een app in Kotlin. Deze app maakte gebruik van een Firebase-database voor de opslag van gegevens.<br><br>Mijn bijdrage bestond voornamelijk uit het implementeren van basisfunctionaliteiten en het aanbrengen van kleine aanpassingen om de app nog beter te laten functioneren. Het was een waardevolle ervaring waarbij ik mijn kennis van Kotlin en Firebase kon inzetten om het project naar een hoger niveau te tillen.',
           skills: 'Kotlin',
           link: 'https://www.exante-it.be/'
         },
@@ -68,7 +68,7 @@ export default {
           images: '/images/groepubuntu.png',
           imagesWebp: '/images/groepubuntu.webp',
           skills: 'Python',
-          description: 'Ik heb mij beziggehouden met het lokaliseren en controleren van netwerkkabels, het installeren van nieuwe pc\'s en het toevoegen van deze pc\'s aan het domein. Daarnaast heb ik gegevens ingevoegd of aangepast, waarbij ik gebruik heb gemaakt van een klein Python-script om dit proces te vereenvoudigen.',
+          description: 'Tijdens mijn werkzaamheden heb ik me onder andere beziggehouden met het lokaliseren en controleren van netwerkkabels, het installeren van nieuwe computers en het toevoegen van deze computers aan het domein.<br><br>Daarnaast heb ik gegevens ingevoerd of aangepast. Om dit proces wat soepeler te laten verlopen, heb ik zelfs een klein Python-script geschreven. Het was een elegante combinatie van hands-on werk en slimme automatisering.',
           link: 'https://groepubuntu.be/ '
         }
       ]

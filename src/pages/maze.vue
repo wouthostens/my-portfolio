@@ -10,14 +10,15 @@ import description from '../components/description.vue';
     <div>
         <TitleComponent title="Snake game" />
         <div class="h-85vh overflow-auto pb-5 ">
-            <div
-                class=" game-board items-center w-full sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg  dark:text-slate-400 dark:bg-slate-800 bg-gray-200">
-                    <description extraClass="mx-5 text-center">Gebruik de pijltoetsen om de slang te besturen. Het doel is om
-                        het rode voedsel te eten en de muren te vermijden. Elke keer dat je het voedsel eet,
-                        neemt je score toe. Wees voorzichtig, want het spel wordt uitdagender met extra muren die elke 5
-                        punten
-                        verschijnen. Veel succes!!
-                    </description>
+            <div @touchstart="handleTouchStart" @touchend="handleTouchEnd"
+                class=" game-board  items-center w-full sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg  dark:text-slate-400 dark:bg-slate-800 bg-gray-200">
+                <description extraClass="mx-5 text-center">Gebruik de pijltoetsen om de slang te besturen. Het doel is
+                    om
+                    het rode voedsel te eten en de muren te vermijden. Elke keer dat je het voedsel eet,
+                    neemt je score toe. Wees voorzichtig, want het spel wordt uitdagender met extra muren die elke 5
+                    punten
+                    verschijnen. Veel succes!!
+                </description>
                 <div v-for="(row, i) in gameBoard" :key="i"
                     class="row border  border-indigo-400 dark:border-yellow-500">
                     <div v-for="(cell, j) in row" :key="j"
@@ -58,10 +59,43 @@ export default {
             score: 0,
             highScores: [],
             deathTraps: [],
+            touchStartX: 0,
+            touchStartY: 0,
 
         };
     },
     methods: {
+        handleTouchStart(e) {
+            this.touchStartX = e.changedTouches[0].clientX;
+            this.touchStartY = e.changedTouches[0].clientY;
+        },
+
+        handleTouchEnd(e) {
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+            const diffX = this.touchStartX - touchEndX;
+            const diffY = this.touchStartY - touchEndY;
+
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                // Horizontal swipe
+                if (diffX > 0 && this.direction !== 'right') {
+                    // Swipe left
+                    this.direction = 'left';
+                } else if (diffX < 0 && this.direction !== 'left') {
+                    // Swipe right
+                    this.direction = 'right';
+                }
+            } else {
+                // Vertical swipe
+                if (diffY > 0 && this.direction !== 'down') {
+                    // Swipe up
+                    this.direction = 'up';
+                } else if (diffY < 0 && this.direction !== 'up') {
+                    // Swipe down
+                    this.direction = 'down';
+                }
+            }
+        },
         preventScroll(e) {
             if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
                 e.preventDefault();

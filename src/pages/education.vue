@@ -4,7 +4,6 @@ import LinkComponent from '../components/contactLink.vue';
 import DescriptionComponent from '../components/description.vue';
 import roundimage from '../components/roundimage.vue';
 import subtitlewithdate from '../components/subtitlewithdate.vue';
-import htmlrender from '../components/htmlrender.vue';
 </script>
 
 <template>

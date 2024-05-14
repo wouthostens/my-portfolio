@@ -28,7 +28,7 @@ import DescriptionComponent from '../components/description.vue';
             Je kan me ook bereiken via
           </ContactLink>
           <ContactLink
-            href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-63acb.appspot.com/o/HostensWoutCV.pdf?alt=media&token=2ad6a5ec-bed8-49da-938c-7a1d90856164"
+            href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-63acb.appspot.com/o/HostensWoutCV.pdf?alt=media&token=642fae66-0054-4c1c-828f-da7698582777"
             text="Download hier mijn cv" />
         </BoxComponent>
       </div>

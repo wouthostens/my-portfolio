@@ -5,10 +5,13 @@ import ImageComponent from '../components/squareimage.vue';
 import SubTitleComponent from '../components/subtitle.vue';
 import BoxComponent from '../components/box.vue';
 import DescriptionComponent from '../components/description.vue';
+import db, { scoreRef } from '../../firebaseconfig';
+import { query, orderBy, limit, getDoc, getDocs, doc, setDoc, Timestamp } from "firebase/firestore";
+import 'firebase/firestore';
 </script>
 
 <template>
-  <div >
+  <div>
     <TitleComponent title="Over mezelf" />
     <div class="overflow-auto">
       <div class="h-85vh mx-auto sm:w-3/4 lg:w-1/2 w-full ">
@@ -17,7 +20,8 @@ import DescriptionComponent from '../components/description.vue';
           <ImageComponent src="/images/wouthostens.webp" alt="Wout Hostens" extraClass=" h-44 mx-auto" />
           <TitleComponent title="Wout Hostens" height="text-4xl font-bold" />
           <SubTitleComponent title="Software Developer" />
-          <DescriptionComponent description='Hey daar! Ik ben Wout Hostens, geboren op 24 mei 2000 en momenteel woonachtig in het prachtige Avelgem, België. Als ik niet bezig ben met code, kun je me vaak buiten vinden terwijl ik wat loopkilometers verzamel - afhankelijk van het weer natuurlijk!<br><br>Mijn passie ligt voornamelijk in het backend gedeelte van softwareontwikkeling. Ik voel me helemaal in mijn element bij het ontwerpen van websites en applicaties, waarbij ik mijn skills inzet om solide en efficiënte systemen te creëren.<br><br>Wat mij het meeste aanspreekt aan de programmeerwereld is het probleemoplossend denken. Ik geniet ervan om uitdagingen aan te gaan en creatieve oplossingen te bedenken voor complexe problemen. Kortom, ik ben gepassioneerd, gedreven en altijd klaar voor een nieuwe uitdaging!' />
+          <DescriptionComponent
+            description='Hey daar! Ik ben Wout Hostens, geboren op 24 mei 2000 en momenteel woonachtig in het prachtige Avelgem, België. Als ik niet bezig ben met code, kun je me vaak buiten vinden terwijl ik wat loopkilometers verzamel - afhankelijk van het weer natuurlijk!<br><br>Mijn passie ligt voornamelijk in het backend gedeelte van softwareontwikkeling. Ik voel me helemaal in mijn element bij het ontwerpen van websites en applicaties, waarbij ik mijn skills inzet om solide en efficiënte systemen te creëren.<br><br>Wat mij het meeste aanspreekt aan de programmeerwereld is het probleemoplossend denken. Ik geniet ervan om uitdagingen aan te gaan en creatieve oplossingen te bedenken voor complexe problemen. Kortom, ik ben gepassioneerd, gedreven en altijd klaar voor een nieuwe uitdaging!' />
           <ContactLink href="tel:+32468166869" text="+32 468 16 68 69">
             Je kunt mij bereiken via mijn gsm op
           </ContactLink>
@@ -29,9 +33,29 @@ import DescriptionComponent from '../components/description.vue';
           </ContactLink>
           <ContactLink
             href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-63acb.appspot.com/o/HostensWoutCV.pdf?alt=media&token=642fae66-0054-4c1c-828f-da7698582777"
-            text="Download hier mijn cv" />
+            text="Download hier mijn cv" @click="downloadedcv()" />
         </BoxComponent>
       </div>
     </div>
   </div>
 </template>
+
+<script scoped>
+export default {
+  methods: {
+    async downloadedcv() {
+      console.log('downloaded cv')
+      const docRef = doc(db, 'cv', "aantalkeerdownloaded");
+      const docSnap = await getDoc(docRef);
+      console.log(docSnap.data().aantal)
+      console.log(!docSnap.exists())
+      if (docSnap.exists()) {
+        await setDoc(docRef, {
+          aantal: docSnap.data().aantal + 1,
+          date: Timestamp.now(),
+        });
+      }
+    },
+  }
+}
+</script>

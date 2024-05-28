@@ -10,27 +10,11 @@
 
 <script>
 export default {
-    data() {
-        return {
-            images: [
-                '/images/denuitvlucht/1.jpg',
-                '/images/denuitvlucht/2.jpg',
-                '/images/denuitvlucht/3.jpg',
-                '/images/denuitvlucht/4.jpg',
-                '/images/denuitvlucht/5.jpg',
-                '/images/denuitvlucht/6.jpg',
-                '/images/denuitvlucht/7.jpg',
-                '/images/denuitvlucht/8.jpg',
-                '/images/denuitvlucht/9.jpg',
-                '/images/denuitvlucht/10.jpg',
-                '/images/denuitvlucht/11.jpg',
-                '/images/denuitvlucht/12.jpg',
-                '/images/denuitvlucht/13.jpg',
-                '/images/denuitvlucht/14.jpg',
-                '/images/denuitvlucht/15.jpg',
-                
-            ],
-        };
+    props: {
+        images: {
+            type: Array,
+            required: true
+        }
     },
     computed: {
         allImages() {

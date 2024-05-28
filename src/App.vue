@@ -31,7 +31,7 @@ const routes = {
   '/projecten': projecten,
   '/studentjobs': studentjobs,
   '/snake': maze,
-  '/strava': strava,
+  '/vrijetijd': strava,
   '/contact': contact
 }
 
@@ -107,8 +107,8 @@ export default {
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Snake
             game</a>
           <span class="hidden lg:inline">|</span>
-          <a @click="open = false" href="#/strava"
-            class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Mijn strava</a>
+          <a @click="open = false" href="#/vrijetijd"
+            class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Vrije tijd</a>
           <span class="hidden lg:inline">|</span>
           <a @click="open = false" href="#/contact"
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Contact <menu></menu></a>

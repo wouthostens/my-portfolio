@@ -25,7 +25,7 @@ defineProps({
       <div>
         <semiboldtitle :title="projectTitle" />
         <DescriptionComponent :description="projectDescription"/>
-        <LinkComponent :href="projectUrl" text='Bekijk hier de code op github'
+        <LinkComponent v-if="projectUrl" :href="projectUrl" text='Bekijk hier de code op github'
           :aClass="'mt-2 block text-lg font-medium leading-tight text-black hover:underline'" />
       </div>
     </div>

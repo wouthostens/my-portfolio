@@ -8,6 +8,7 @@ import studentjobs from './pages/studentjobs.vue'
 import maze from './pages/maze.vue'
 import strava from './pages/strava.vue'
 import contact from './pages/contact.vue'
+import expoticket from './pages/expoticket.vue'
 
 const darkMode = ref(true);
 document.body.classList.add('dark');
@@ -32,7 +33,8 @@ const routes = {
   '/studentjobs': studentjobs,
   '/snake': maze,
   '/vrijetijd': strava,
-  '/contact': contact
+  '/contact': contact,
+  '/vroemvroem': expoticket
 }
 
 const currentPath = ref(window.location.hash)

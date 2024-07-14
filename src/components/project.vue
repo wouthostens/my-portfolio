@@ -7,6 +7,10 @@ import box from './box.vue';
 
 defineProps({
   projectDescription: String,
+  projectLinkText: {
+    type: String,
+    default: 'Bekijk hier de code op github'
+  },
   projectImage: String,
   projectTitle: String,
   projectUrl: String,
@@ -25,7 +29,7 @@ defineProps({
       <div>
         <semiboldtitle :title="projectTitle" />
         <DescriptionComponent :description="projectDescription"/>
-        <LinkComponent v-if="projectUrl" :href="projectUrl" text='Bekijk hier de code op github'
+        <LinkComponent v-if="projectUrl" :href="projectUrl" :text="projectLinkText"
           :aClass="'mt-2 block text-lg font-medium leading-tight text-black hover:underline'" />
       </div>
     </div>
@@ -36,6 +40,7 @@ defineProps({
 export default {
   props: {
     projectDescription: String,
+   
   },
 };
 </script>

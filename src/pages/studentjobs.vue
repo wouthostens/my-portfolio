@@ -9,7 +9,7 @@ import LinkComponent from '../components/contactLink.vue';
 
 <template>
   <div>
-    <TitleComponent title="Studenten jobs" />
+    <TitleComponent title="Jobs" />
     <div class="h-85vh overflow-auto">
       <div class="pb-5" v-for="(job, index) in jobs" :key="index">
         <link rel="prefetch" :href="job.imagesWebp" as="image">
@@ -33,6 +33,16 @@ export default {
   data() {
     return {
       jobs: [
+        {
+          title: 'Erp support bij EnergyVision',
+          company: 'EnergyVision',
+          period: 'aug 2024 - heden',
+          description: 'Als ERP Support bij EnergyVision werk ik met het Netsuite-pakket. Mijn taken omvatten het bieden van ondersteuning bij het gebruik van het systeem, het oplossen van problemen en het implementeren van aanpassingen en verbeteringen. Daarnaast programmeer ik ook projecten met behulp van JavaScript en SuiteScripting.<br><br>Ik heb ook ervaring met Python, HTML en CSS, wat me in staat stelt om veelzijdige oplossingen te ontwikkelen. Het is een uitdagende en boeiende functie waarin ik mijn programmeervaardigheden kan toepassen in een zakelijke omgeving.',
+          skills: 'JavaScript, SuiteScripting, Python, HTML, CSS',
+          images: '/images/energyvision.jpg',
+          imagesWebp: '/images/energyvision.svg',
+          link: 'https://www.energyvision.be/'
+        },
         {
           title: 'Jobstudent bij Codefever',
           company: 'Codefever',

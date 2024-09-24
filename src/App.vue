@@ -102,8 +102,7 @@ export default {
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">School</a>
           <span class="hidden lg:inline">| </span>
           <a @click="open = false" href="#/studentjobs"
-            class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Studenten
-            Jobs</a>
+            class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Jobs</a>
           <span class="hidden lg:inline">|</span>
           <a @click="open = false" href="#/vrijetijd"
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Vrije
@@ -115,7 +114,8 @@ export default {
           <span class="hidden lg:inline">|</span>
           <a @click="open = false" href="#/contact"
             class="block mt-4 lg:inline-block lg:mt-0 dark:text-slate-400 dark:hover:text-yellow-500 mx-2 text-gray-700 hover:text-indigo-500">Contact
-            <menu></menu></a>
+            <menu></menu>
+          </a>
           <span class="hidden lg:inline">|</span>
           <span @click="toggleDarkMode"
             class="cursor-pointer dark:text-slate-400 dark:hover:text-yellow-500 hover:text-indigo-500 text-gray-700 font-medium mx-2">

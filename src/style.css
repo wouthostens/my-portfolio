@@ -4,12 +4,10 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,73 +15,77 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a, button {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: #27272a;
+  background-color: #fafafa;
 }
+
 body.dark {
-  background-color: #12202d;
+  color: #e4e4e7;
+  background-color: #09090b;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Aurora-achtergrond: subtiele gekleurde gloed achter alles */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(55rem 40rem at 12% -10%, rgba(99, 102, 241, 0.12), transparent 60%),
+    radial-gradient(50rem 36rem at 95% 10%, rgba(217, 70, 239, 0.09), transparent 60%),
+    radial-gradient(60rem 44rem at 50% 110%, rgba(34, 211, 238, 0.09), transparent 60%);
 }
 
-.card {
-  padding: 2em;
+body.dark::before {
+  background:
+    radial-gradient(55rem 40rem at 12% -10%, rgba(99, 102, 241, 0.18), transparent 60%),
+    radial-gradient(50rem 36rem at 95% 10%, rgba(217, 70, 239, 0.12), transparent 60%),
+    radial-gradient(60rem 44rem at 50% 110%, rgba(34, 211, 238, 0.10), transparent 60%);
 }
 
-#app {
-  margin: 0 auto;
-  text-align: center;
+::selection {
+  background: rgba(139, 92, 246, 0.35);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Slanke scrollbars die bij het thema passen */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.35) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.35);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Stagger-vertragingen voor fade-up animaties */
+.stagger-1 { animation-delay: .05s; }
+.stagger-2 { animation-delay: .1s; }
+.stagger-3 { animation-delay: .15s; }
+.stagger-4 { animation-delay: .2s; }
+.stagger-5 { animation-delay: .25s; }
+.stagger-6 { animation-delay: .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-
-
-.game-board {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.row {
-  display: flex;
-}
-
-.row div {
-  width: 20px;
-  height: 20px;
-}
-
-.snake {
-  background: green;
-}
-
-.food {
-  background: red;
 }

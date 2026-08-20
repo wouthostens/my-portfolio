@@ -1,5 +1,5 @@
 <template>
-    <p class="dark:text-yellow-500 uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ title }}</p>
+    <p class="font-display text-lg font-semibold tracking-tight text-zinc-900 dark:text-white">{{ title }}</p>
 </template>
 
 <script>

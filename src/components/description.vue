@@ -1,5 +1,6 @@
 <template>
-    <p :class="['dark:text-slate-400 text-gray-800 my-4', extraClass]" v-html="description"></p>
+    <p :class="['my-3 text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400', extraClass]" v-html="description">
+    </p>
 </template>
 
 <script>

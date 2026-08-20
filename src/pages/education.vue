@@ -9,28 +9,48 @@ import subtitlewithdate from '../components/subtitlewithdate.vue';
 <template>
   <div>
     <TitleComponent title="Opleidingen en stages" />
-    <div class="h-85vh overflow-auto">
-      <div class="pb-5" v-for="(education, index) in timeline" :key="index">
-        <link rel="prefetch" :href="education.imageswebp" as="image">
+    <div class="h-85vh overflow-auto pb-10">
+      <div class="relative mx-auto w-full max-w-3xl px-4">
+        <!-- Verticale tijdlijn -->
         <div
-          class="dark:bg-slate-800 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-gray-200 rounded-xl shadow-md overflow-hidden flex">
-          <div>
-            <subtitlewithdate :title="education.degree" :date="education.year" />
-            <p class="dark:text-slate-300">{{ education.school }}</p>
-            <DescriptionComponent :description="education.discription"> </DescriptionComponent>
-            <LinkComponent :href="education.link" :text="'Bekijk info over ' + education.degree"
-              aClass="block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline"></LinkComponent>
-            <div class="ml-10" v-if="education.internships">
-              <div v-for="(internship, index) in education.internships" :key="index">
-                <subtitlewithdate :title="'stagair bij ' + internship.company" :date="internship.period" />
-                <DescriptionComponent :description="internship.discription"></DescriptionComponent>
-                <p class="dark:text-slate-500">Skills: {{ internship.skills }}</p>
-                <LinkComponent :href="internship.link" :text="'Bekijk ' + internship.company"
-                  aClass="block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline"></LinkComponent>
+          class="absolute bottom-4 left-7 top-2 w-px bg-gradient-to-b from-indigo-500/60 via-violet-500/40 to-transparent">
+        </div>
+
+        <div v-for="(education, index) in timeline" :key="index"
+          :class="['relative animate-fade-up pb-8 pl-14', `stagger-${Math.min(index + 1, 6)}`]">
+          <link rel="prefetch" :href="education.imageswebp" as="image">
+          <!-- Tijdlijn-dot -->
+          <div
+            class="absolute left-7 top-7 h-3 w-3 -translate-x-1/2 rounded-full bg-gradient-to-tr from-indigo-500 to-fuchsia-500 ring-4 ring-[#fafafa] dark:ring-[#09090b]">
+          </div>
+
+          <div
+            class="rounded-2xl border border-zinc-900/10 bg-white/70 p-5 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-500/30 hover:shadow-xl hover:shadow-violet-500/5 dark:border-white/10 dark:bg-white/[0.04] md:p-7">
+            <div class="flex items-start gap-4">
+              <div class="min-w-0 flex-1">
+                <subtitlewithdate :title="education.degree" :date="education.year" />
+                <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{{ education.school }}</p>
+                <DescriptionComponent :description="education.discription" />
+                <LinkComponent :href="education.link" :text="'Bekijk info over ' + education.degree" />
+              </div>
+              <roundimage :src="education.imageswebp" :alt="education.school" />
+            </div>
+
+            <div v-if="education.internships" class="mt-5 space-y-4">
+              <div v-for="(internship, index) in education.internships" :key="index"
+                class="rounded-xl border border-zinc-900/10 bg-zinc-900/[0.02] p-4 dark:border-white/10 dark:bg-white/[0.03] md:p-5">
+                <subtitlewithdate :title="'Stagiair bij ' + internship.company" :date="internship.period" />
+                <DescriptionComponent :description="internship.discription" />
+                <div class="mb-3 flex flex-wrap gap-1.5" v-if="internship.skills">
+                  <span v-for="skill in internship.skills.split(',')" :key="skill"
+                    class="rounded-full border border-indigo-500/20 bg-indigo-500/10 px-2.5 py-0.5 text-xs font-medium text-indigo-600 dark:border-indigo-400/20 dark:bg-indigo-400/10 dark:text-indigo-300">
+                    {{ skill.trim() }}
+                  </span>
+                </div>
+                <LinkComponent :href="internship.link" :text="'Bekijk ' + internship.company" />
               </div>
             </div>
           </div>
-          <roundimage :src="education.imageswebp" :alt="education.imageswebp"/>
         </div>
       </div>
     </div>
@@ -75,7 +95,7 @@ export default {
               company: 'TVH',
               period: 'sept 2021',
               discription: 'Tijdens mijn stage heb ik in een razendsnel tempo een Spring Boot applicatie in elkaar gezet. Deze app haalt gegevens op van GitLab, waarna de gebruiker een specifiek project kan selecteren. Vervolgens toont de app een PlantUML-bestand dat de klasserelaties illustreert.<br><br> Ondanks dat de stage maar een maand duurde, heb ik een schat aan ervaring opgedaan met Spring Boot en Java. En laten we de unit testing niet vergeten, dat kwam ook aan bod en heeft mijn skills nog verder aangescherpt.',
-              skills: 'Springboot, Java en Unit testing',
+              skills: 'Springboot, Java, Unit testing',
               link: 'https://www.tvh.com/'
             },
             {
@@ -89,7 +109,7 @@ export default {
               company: 'Cuarta',
               period: 'sept 2020 - dec 2020',
               discription: 'Bij Cuarta heb ik een cool project opgepakt: het ontwikkelen van een tool die Delphi-code kan omzetten naar C#. Best een uitdaging, maar superinteressant! De tool was al in gebruik binnen het bedrijf, maar had nog wat finetuning nodig.<br><br>Tijdens dit proces heb ik ontzettend veel geleerd over zowel C# als Delphi, en vooral over hoe je code van de ene taal naar de andere vertaalt. Het was een waardevolle ervaring waarbij ik mijn programmeervaardigheden naar een hoger niveau heb getild.',
-              skills: 'Delphi en C#',
+              skills: 'Delphi, C#',
               link: 'https://www.cuarta.be/'
             }
           ]

@@ -1,25 +1,24 @@
 # My Portfolio
 
-This is a project to showcase my portfolio. It is built using Vue.js.
+This is a project to showcase my portfolio. It is built with Vue 3, Vite and Tailwind CSS, and hosted on Firebase.
 
 ## Features
 
-- Responsive design
-- Projects section
-- Skills section
-- About Me section
-- Contact section
+- Modern 2026 design: glassmorphism, aurora gradients and subtle animations
+- Dark / light mode (persisted in localStorage)
+- Responsive design with a floating glass navbar
+- Projects, education & jobs timelines, contact form (EmailJS) and a 3D snake game (Three.js/WebGL) with Firebase highscores
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/my-portfolio.git`
+1. Clone the repository: `git clone https://github.com/wouthostens/my-portfolio.git`
 2. Navigate to the project directory: `cd my-portfolio`
 3. Install dependencies: `npm install`
 
 ## Usage
 
-1. Start the development server: `npm run serve`
-2. Open your browser and visit `http://localhost:8080`
+1. Start the development server: `npm run dev`
+2. Open your browser and visit `http://localhost:5173`
 
 ## Contributing
 
@@ -32,4 +31,3 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 For any inquiries or questions, feel free to reach out to me at [wout.hostens@gmail.com](mailto:wout.hostens@gmail.com).
-

@@ -1,7 +1,9 @@
 <template>
-  <p :class="['dark:text-slate-400 text-gray-700', pClass]">
+  <p :class="['text-[15px] text-zinc-600 dark:text-zinc-400', pClass]">
     <slot></slot>
-    <a :href="href" target="_blank" :class="['dark:text-slate-300 dark:hover:text-yellow-500 text-indigo-500', aClass]" v-html="text"></a>
+    <a :href="href" target="_blank"
+      :class="['font-medium text-indigo-600 underline-offset-4 transition-colors hover:text-fuchsia-500 hover:underline dark:text-indigo-400 dark:hover:text-fuchsia-400', aClass]"
+      v-html="text"></a>
   </p>
 </template>
 

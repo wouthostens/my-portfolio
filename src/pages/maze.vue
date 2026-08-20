@@ -1,38 +1,41 @@
 <script setup>
+import { defineAsyncComponent } from 'vue';
 import TitleComponent from '../components/title.vue';
 import db, { scoreRef } from '../../firebaseconfig';
 import { query, orderBy, limit, getDoc, getDocs, doc, setDoc, Timestamp } from "firebase/firestore";
 import 'firebase/firestore';
 import description from '../components/description.vue';
+
+// Three.js wordt pas ingeladen wanneer iemand deze pagina opent
+const Snake3D = defineAsyncComponent(() => import('../components/snake3d.vue'));
 </script>
 
 <template>
     <div>
         <TitleComponent title="Snake game" />
-        <div class="h-85vh overflow-auto pb-5 ">
+        <div class="h-85vh overflow-auto pb-10">
             <div @touchstart="handleTouchStart" @touchend="handleTouchEnd"
                 @touchmove="isPlaying ? $event.preventDefault() : null"
-                class=" game-board  items-center w-full sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg  dark:text-slate-400 dark:bg-slate-800 bg-gray-200">
+                class="game-board animate-fade-up mx-2 w-full items-center rounded-2xl border border-zinc-900/10 bg-white/70 p-5 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04] sm:mx-auto sm:w-3/4 lg:w-1/2 md:p-7">
                 <description extraClass="mx-5 text-center"
                     description="Gebruik de pijltoetsen om de slang te besturen of verander van richting door te swipen op je smartphone. Zodra je begint met het spel, zal het scrollen op je smartphone niet meer mogelijk zijn totdat het spel voorbij is. Het doel is simpel: eet het rode voedsel en vermijd de muren. Elke keer dat je het voedsel opeet, zal je score toenemen. Maar pas op! Het spel wordt steeds uitdagender met extra muren die elke 5 punten verschijnen. Veel succes en laat die slang lekker groeien!" />
-                <div v-for="(row, i) in gameBoard" :key="i"
-                    class="row border  border-indigo-400 dark:border-yellow-500">
-                    <div v-for="(cell, j) in row" :key="j"
-                        :class="['cell', cell, cell === 'deathTrap' ? 'bg-indigo-400 dark:bg-yellow-500 snake:bg-green' : '', ' border dark:border-yellow-500 border-indigo-400 snake:bg-green']">
-                    </div>
-                </div>
-                <p>Score: {{ score }}</p>
-                <form class="pt-1 " @submit.prevent="startGame">
+
+                <Snake3D :snake="snake" :food="food" :deathTraps="deathTraps" :grid="20" />
+
+                <p class="mt-4 text-center font-display text-lg font-semibold text-zinc-900 dark:text-white">
+                    Score: {{ score }}</p>
+                <form class="mt-3 flex flex-wrap items-center justify-center gap-2" @submit.prevent="startGame">
                     <input autocomplete="on" id="Name"
-                        class="text-center  border-4 border-indigo-400 dark:border-yellow-400" v-model="playerName"
-                        placeholder="Enter your name" required />
-                    <button class="dark:text-yellow-500 ml-2 p-2   border-4 border-indigo-400 dark:border-yellow-500"
-                        type="submit">Start Game</button>
+                        class="rounded-full border border-zinc-900/10 bg-white px-4 py-2 text-center text-sm text-zinc-900 outline-none transition-all placeholder:text-zinc-400 focus:border-violet-500/50 focus:ring-2 focus:ring-violet-500/30 dark:border-white/10 dark:bg-white/5 dark:text-white"
+                        v-model="playerName" placeholder="Vul je naam in" required />
+                    <button
+                        class="rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-violet-500/30"
+                        type="submit">{{ isPlaying ? 'Herstart game' : 'Start game' }}</button>
                 </form>
                 <div
-                    class="dark:bg-slate-900 p-6 w-full sm:w-3/4 lg:w-1/2 mx-auto bg-white rounded-xl shadow-md overflow-hidden flex flex-col my-3">
-                    <h3 class="text-2xl">Top 5 High Scores </h3>
-                    <ul>
+                    class="mx-auto my-4 flex w-full flex-col rounded-xl border border-zinc-900/10 bg-zinc-900/[0.02] p-5 dark:border-white/10 dark:bg-white/[0.03] sm:w-3/4 lg:w-1/2">
+                    <h3 class="font-display text-lg font-semibold text-zinc-900 dark:text-white">Top 5 highscores</h3>
+                    <ul class="mt-2 space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
                         <li v-for="(score, index) in highScores" :key="index">
                             {{ index + 1 }}. {{ score.name }}: {{ score.score }}
                         </li>
@@ -48,7 +51,6 @@ export default {
     data() {
         return {
             snake: [{ x: 10, y: 10 }],
-            rawGameBoard: Array(20).fill(Array(20).fill('')),
             direction: 'right',
             food: null,
             gameInterval: null,
@@ -58,6 +60,7 @@ export default {
             touchStartX: 0,
             touchStartY: 0,
             isPlaying: false,
+            playerName: '',
         };
     },
     methods: {
@@ -97,7 +100,14 @@ export default {
                 e.preventDefault();
             }
         },
+        handleKeydown(e) {
+            if (e.key === 'ArrowUp' && this.direction !== 'down') this.direction = 'up';
+            if (e.key === 'ArrowDown' && this.direction !== 'up') this.direction = 'down';
+            if (e.key === 'ArrowLeft' && this.direction !== 'right') this.direction = 'left';
+            if (e.key === 'ArrowRight' && this.direction !== 'left') this.direction = 'right';
+        },
         startGame() {
+            clearInterval(this.gameInterval);
             this.direction = 'right';
             this.snake = [{ x: 10, y: 10 }];
             this.food = this.getRandomEmptyCell();
@@ -179,28 +189,15 @@ export default {
         },
     },
 
-    computed: {
-        gameBoard() {
-            return this.rawGameBoard.map((row, y) => row.map((cell, x) => {
-                if (this.isSnake({ x, y })) return 'snake';
-                if (this.isFood({ x, y })) return 'food';
-                if (this.isDeathTrap({ x, y })) return 'deathTrap';
-                return '';
-            }));
-        },
-    },
     mounted() {
         window.addEventListener('keydown', this.preventScroll);
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowUp' && this.direction !== 'down') this.direction = 'up';
-            if (e.key === 'ArrowDown' && this.direction !== 'up') this.direction = 'down';
-            if (e.key === 'ArrowLeft' && this.direction !== 'right') this.direction = 'left';
-            if (e.key === 'ArrowRight' && this.direction !== 'left') this.direction = 'right';
-        });
+        window.addEventListener('keydown', this.handleKeydown);
         this.updatescoreboard();
     },
-    beforeDestroy() {
+    beforeUnmount() {
         window.removeEventListener('keydown', this.preventScroll);
+        window.removeEventListener('keydown', this.handleKeydown);
+        clearInterval(this.gameInterval);
     },
 };
 </script>
@@ -210,22 +207,5 @@ export default {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-}
-
-.row {
-    display: flex;
-}
-
-.row div {
-    width: 20px;
-    height: 20px;
-}
-
-.snake {
-    background: green;
-}
-
-.food {
-    background: red;
 }
 </style>

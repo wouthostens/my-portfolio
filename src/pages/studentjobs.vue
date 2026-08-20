@@ -2,7 +2,6 @@
 import TitleComponent from '../components/title.vue';
 import roundimage from '../components/roundimage.vue';
 import description from '../components/description.vue';
-import box from '../components/box.vue';
 import subtitlewithdate from '../components/subtitlewithdate.vue';
 import LinkComponent from '../components/contactLink.vue';
 </script>
@@ -10,19 +9,39 @@ import LinkComponent from '../components/contactLink.vue';
 <template>
   <div>
     <TitleComponent title="Jobs" />
-    <div class="h-85vh overflow-auto">
-      <div class="pb-5" v-for="(job, index) in jobs" :key="index">
-        <link rel="prefetch" :href="job.imagesWebp" as="image">
-        <box extraClass="w-full sm:w-3/4 lg:w-1/2 mx-auto flex">
-          <div>
-            <subtitlewithdate :title="job.title" :date="job.period" />
-            <description :description="job.description"/>
-            <p class="dark:text-slate-500 mt-3" v-if="job.skills">Skills: {{ job.skills }}</p>
-            <LinkComponent :href="job.link" :text="'Bekijk ' + job.company"
-              aClass="block mt-2 mb-4 text-lg leading-tight font-medium text-black hover:underline"></LinkComponent>
+    <div class="h-85vh overflow-auto pb-10">
+      <div class="relative mx-auto w-full max-w-3xl px-4">
+        <!-- Verticale tijdlijn -->
+        <div
+          class="absolute bottom-4 left-7 top-2 w-px bg-gradient-to-b from-indigo-500/60 via-violet-500/40 to-transparent">
+        </div>
+
+        <div v-for="(job, index) in jobs" :key="index"
+          :class="['relative animate-fade-up pb-8 pl-14', `stagger-${Math.min(index + 1, 6)}`]">
+          <link rel="prefetch" :href="job.imagesWebp" as="image">
+          <!-- Tijdlijn-dot -->
+          <div
+            class="absolute left-7 top-7 h-3 w-3 -translate-x-1/2 rounded-full bg-gradient-to-tr from-indigo-500 to-fuchsia-500 ring-4 ring-[#fafafa] dark:ring-[#09090b]">
           </div>
-          <roundimage v-if="job.imagesWebp" :src="job.imagesWebp" :alt="job.title" />
-        </box>
+
+          <div
+            class="rounded-2xl border border-zinc-900/10 bg-white/70 p-5 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-500/30 hover:shadow-xl hover:shadow-violet-500/5 dark:border-white/10 dark:bg-white/[0.04] md:p-7">
+            <div class="flex items-start gap-4">
+              <div class="min-w-0 flex-1">
+                <subtitlewithdate :title="job.title" :date="job.period" />
+                <description :description="job.description" />
+                <div class="mb-3 flex flex-wrap gap-1.5" v-if="job.skills">
+                  <span v-for="skill in job.skills.split(',')" :key="skill"
+                    class="rounded-full border border-indigo-500/20 bg-indigo-500/10 px-2.5 py-0.5 text-xs font-medium text-indigo-600 dark:border-indigo-400/20 dark:bg-indigo-400/10 dark:text-indigo-300">
+                    {{ skill.trim() }}
+                  </span>
+                </div>
+                <LinkComponent :href="job.link" :text="'Bekijk ' + job.company" />
+              </div>
+              <roundimage v-if="job.imagesWebp" :src="job.imagesWebp" :alt="job.title" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50,7 +69,7 @@ export default {
           images: '/images/codefever.jpg',
           imagesWebp: '/images/codefever.webp',
           description: 'Ik heb het voorrecht om les te geven aan kinderen van het tweede leerjaar tot ze ongeveer 16 jaar oud zijn. Samen met mijn geweldige assistenten of als assistent zelf, breng ik ze de basis van programmeren bij. We beginnen met leuke tools zoals Scratch en Minecraft Education om hun creativiteit te stimuleren.<br><br>Naarmate ze groeien, gaan we dieper in op de wereld van coderen. Van HTML en CSS tot JavaScript en Python, ze duiken in een spannende reis door verschillende programmeertalen. En alsof dat nog niet genoeg is, laten we ze zelfs experimenteren met microbits om echte hardware te programmeren! Het is geweldig om te zien hoe ze zich ontwikkelen en zichzelf uitdagen om nieuwe vaardigheden te leren.',
-          skills: 'Scratch, Minecraft Education, HTML CSS JS, Python en Microbit',
+          skills: 'Scratch, Minecraft Education, HTML CSS JS, Python, Microbit',
           link: 'https://www.codefever.be/'
         },
         {
@@ -60,7 +79,7 @@ export default {
           images: '/images/vedelux.png',
           imagesWebp: '/images/vedelux.webp',
           description: 'Momenteel werk ik aan het uitbreiden en herstructureren van een bestaande scantoepassing. Het doel? Om deze applicatie minder afhankelijk te maken van Excel-gegevens en in plaats daarvan te laten draaien op Firebase. Voor meer gedetailleerde informatie over dit project, nodig ik je uit om een kijkje te nemen bij mijn projecten.<br><br>Daarnaast heb ik met behulp van Python verschillende taken weten te automatiseren. Hierdoor hebben werknemers minder handmatig werk te verrichten, wat zorgt voor een efficiëntere workflow en meer tijd voor belangrijkere taken.',
-          skills: 'Python, Kotlin en HTML CSS JS',
+          skills: 'Python, Kotlin, HTML CSS JS',
           link: 'https://www.vedelux.be/'
         },
         {

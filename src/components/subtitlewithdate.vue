@@ -1,7 +1,9 @@
 <template>
-    <div class="flex items-center">
+    <div class="flex flex-wrap items-center gap-3">
         <subtitle :title="title" />
-        <p class="dark:text-slate-300 ml-5">{{ date }}</p>
+        <p v-if="date"
+            class="rounded-full border border-zinc-900/10 bg-zinc-900/5 px-2.5 py-0.5 text-xs font-medium text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-zinc-400">
+            {{ date }}</p>
     </div>
 </template>
 
@@ -19,7 +21,7 @@ export default {
         },
         date: {
             type: String,
-            required: true
+            default: ''
         }
     }
 }
